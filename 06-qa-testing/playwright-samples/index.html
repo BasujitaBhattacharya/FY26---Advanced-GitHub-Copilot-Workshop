@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--
+  Mock Ontario Service Portal — used by Module 06 Playwright tests.
+  Simulates a permit submission and search form with accessible markup.
+  Real portal: https://www.ontario.ca/page/government-ontario
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ontario Permit Services — Mock Portal</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: "Open Sans", Arial, sans-serif;
+      background: #f5f5f5;
+      color: #212121;
+      margin: 0;
+    }
+    header {
+      background: #00468c;
+      color: #fff;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    header h1 { margin: 0; font-size: 1.2rem; }
+    nav { background: #003a70; padding: 0 24px; }
+    nav a {
+      color: #cce0ff;
+      display: inline-block;
+      padding: 10px 16px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    nav a:hover { color: #fff; text-decoration: underline; }
+    main { max-width: 820px; margin: 32px auto; padding: 0 16px; }
+    .card {
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.12);
+      padding: 28px 32px;
+      margin-bottom: 24px;
+    }
+    h2 { color: #003a70; margin-top: 0; }
+    label { display: block; font-weight: 600; margin-top: 16px; margin-bottom: 4px; }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #757575;
+      border-radius: 3px;
+      font-size: 1rem;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: 3px solid #00468c;
+      outline-offset: 1px;
+    }
+    .error {
+      color: #c62828;
+      font-size: 0.85rem;
+      margin-top: 4px;
+      display: none;
+    }
+    .error.visible { display: block; }
+    button[type="submit"] {
+      margin-top: 24px;
+      background: #00468c;
+      color: #fff;
+      border: none;
+      padding: 10px 24px;
+      font-size: 1rem;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover { background: #003a70; }
+    #confirmation { display: none; }
+    #confirmation.visible {
+      display: block;
+      background: #e8f5e9;
+      border-left: 4px solid #2e7d32;
+      padding: 16px 20px;
+      border-radius: 3px;
+    }
+    #confirmation h3 { color: #1b5e20; margin-top: 0; }
+    #permit-status { font-weight: 700; }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.8rem;
+      color: #757575;
+    }
+  </style>
+</head>
+<body>
+
+<header role="banner">
+  <svg width="40" height="40" aria-hidden="true" viewBox="0 0 40 40">
+    <circle cx="20" cy="20" r="20" fill="#fff"/>
+    <text x="20" y="26" text-anchor="middle" fill="#00468c" font-size="18" font-weight="bold">ON</text>
+  </svg>
+  <h1>Ontario Permit Services</h1>
+</header>
+
+<nav aria-label="Main navigation">
+  <a href="/" aria-current="page">Home</a>
+  <a href="/permits/new">New Application</a>
+  <a href="/permits/search">Search Permits</a>
+</nav>
+
+<main>
+
+  <!-- ── Permit Submission Form ── -->
+  <section class="card" id="new-permit-section">
+    <h2>Submit a Permit Application</h2>
+    <form id="permit-form" novalidate>
+
+      <label for="applicant-name">Applicant Name <span aria-hidden="true">*</span></label>
+      <input
+        type="text"
+        id="applicant-name"
+        name="applicantName"
+        aria-required="true"
+        autocomplete="name"
+        data-testid="applicant-name"
+      />
+      <span class="error" id="err-name" role="alert">Applicant Name is required</span>
+
+      <label for="email">Email <span aria-hidden="true">*</span></label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        aria-required="true"
+        autocomplete="email"
+        data-testid="email"
+      />
+      <span class="error" id="err-email-required" role="alert">Email is required</span>
+      <span class="error" id="err-email-format" role="alert">Please enter a valid email address</span>
+
+      <label for="permit-type">Permit Type <span aria-hidden="true">*</span></label>
+      <select id="permit-type" name="permitType" aria-required="true" data-testid="permit-type">
+        <option value="">— Select —</option>
+        <option value="CONSTRUCTION">Construction</option>
+        <option value="RENOVATION">Renovation</option>
+        <option value="DEMOLITION">Demolition</option>
+        <option value="ELECTRICAL">Electrical</option>
+        <option value="PLUMBING">Plumbing</option>
+      </select>
+      <span class="error" id="err-type" role="alert">Permit Type is required</span>
+
+      <label for="region">Region <span aria-hidden="true">*</span></label>
+      <select id="region" name="region" aria-required="true" data-testid="region">
+        <option value="">— Select —</option>
+        <option value="TORONTO">Toronto</option>
+        <option value="OTTAWA">Ottawa</option>
+        <option value="HAMILTON">Hamilton</option>
+        <option value="LONDON">London</option>
+        <option value="WINDSOR">Windsor</option>
+      </select>
+
+      <label for="description">Project Description</label>
+      <textarea id="description" name="description" rows="3" data-testid="description"></textarea>
+
+      <button type="submit">Submit Application</button>
+    </form>
+
+    <!-- Confirmation panel (shown after successful submission) -->
+    <div id="confirmation" role="status" aria-live="polite">
+      <h3>Application Submitted</h3>
+      <p>Your permit application has been received. Your confirmation number is:</p>
+      <p data-testid="confirmation-number" id="confirmation-number" style="font-size:1.4rem; color:#1b5e20;"></p>
+      <p>You will receive an email at the address you provided once your application is reviewed.</p>
+    </div>
+  </section>
+
+  <!-- ── Permit Search ── -->
+  <section class="card" id="search-section">
+    <h2>Search a Permit</h2>
+    <form id="search-form" novalidate>
+      <label for="search-id">Permit ID</label>
+      <input
+        type="text"
+        id="search-id"
+        name="permitId"
+        placeholder="e.g. P-000001"
+        data-testid="search-id"
+      />
+      <button type="submit" style="margin-top:12px;">Search</button>
+    </form>
+
+    <div id="search-result" style="margin-top:16px;" aria-live="polite">
+      <p id="no-result-message" style="display:none; color:#c62828;">
+        No permit found with this ID
+      </p>
+      <div id="permit-detail" style="display:none;">
+        <p>Status: <span data-testid="permit-status" id="permit-status"></span></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© King's Printer for Ontario, 2024 | Mock portal for workshop purposes only</p>
+</footer>
+
+<script>
+  // ── Simulated permit DB (used by search) ──────────────────────────────────
+  const PERMITS = {
+    'P-000001': 'ACTIVE',
+    'P-000002': 'PENDING',
+    'P-000003': 'APPROVED',
+  };
+
+  // ── Permit submission form ────────────────────────────────────────────────
+  document.getElementById('permit-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let valid = true;
+
+    const name    = document.getElementById('applicant-name').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const type    = document.getElementById('permit-type').value;
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    document.querySelectorAll('.error').forEach(el => el.classList.remove('visible'));
+
+    if (!name) {
+      document.getElementById('err-name').classList.add('visible');
+      valid = false;
+    }
+    if (!email) {
+      document.getElementById('err-email-required').classList.add('visible');
+      valid = false;
+    } else if (!emailRe.test(email)) {
+      document.getElementById('err-email-format').classList.add('visible');
+      valid = false;
+    }
+    if (!type) {
+      document.getElementById('err-type').classList.add('visible');
+      valid = false;
+    }
+
+    if (valid) {
+      const num = 'P-' + String(Math.floor(Math.random() * 999999)).padStart(6, '0');
+      document.getElementById('confirmation-number').textContent = num;
+      document.getElementById('confirmation').classList.add('visible');
+      document.getElementById('permit-form').style.display = 'none';
+    }
+  });
+
+  // ── Permit search form ────────────────────────────────────────────────────
+  document.getElementById('search-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const id = document.getElementById('search-id').value.trim().toUpperCase();
+    const noResult = document.getElementById('no-result-message');
+    const detail   = document.getElementById('permit-detail');
+    const status   = document.getElementById('permit-status');
+
+    noResult.style.display = 'none';
+    detail.style.display   = 'none';
+
+    if (PERMITS[id]) {
+      status.textContent   = PERMITS[id];
+      detail.style.display = 'block';
+    } else {
+      noResult.style.display = 'block';
+    }
+  });
+</script>
+</body>
+</html>

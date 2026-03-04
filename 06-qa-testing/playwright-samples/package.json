@@ -1,0 +1,17 @@
+{
+  "name": "ontario-portal-e2e",
+  "version": "1.0.0",
+  "description": "Playwright E2E tests for Ontario service portal mock — Module 06",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report",
+    "install:browsers": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "@axe-core/playwright": "^4.9.0",
+    "serve": "^14.2.0"
+  }
+}
