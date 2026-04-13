@@ -106,7 +106,7 @@ correctly under Java 21. Highlight any removed APIs, renamed packages
 such as records, sealed classes, and pattern matching.
 ```
 
-### Key Java 8 → 21 changes for Ontario servlet code
+### Key Java 8 → 21 changes for Customer servlet code
 
 ```java
 // LEGACY: Java 8 — verbose DTO

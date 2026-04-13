@@ -1,7 +1,7 @@
 {
-  "name": "ontario-portal-e2e",
+  "name": "Customerr-portal-e2e",
   "version": "1.0.0",
-  "description": "Playwright E2E tests for Ontario service portal mock — Module 06",
+  "description": "Playwright E2E tests for Customerr service portal mock — Module 06",
   "scripts": {
     "test": "playwright test",
     "test:headed": "playwright test --headed",

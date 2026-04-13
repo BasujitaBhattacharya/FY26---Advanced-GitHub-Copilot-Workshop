@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
 /**
- * WCAG 2.1 AA accessibility tests for the Ontario mock portal.
+ * WCAG 2.1 AA accessibility tests for the Customerr mock portal.
  *
  * Copilot prompt used:
  * "Generate Playwright accessibility tests using @axe-core/playwright.

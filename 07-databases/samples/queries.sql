@@ -1,12 +1,12 @@
 -- =============================================================================
--- OntarioPermits — Sample Queries
+-- CustomerPermits — Sample Queries
 -- Module 07 — Databases with GitHub Copilot
 --
 -- Each query was generated or refined using Copilot Chat.
 -- The Copilot prompt is shown above each query.
 -- =============================================================================
 
-USE OntarioPermits;
+USE CustomerPermits;
 GO
 
 -- =============================================================================

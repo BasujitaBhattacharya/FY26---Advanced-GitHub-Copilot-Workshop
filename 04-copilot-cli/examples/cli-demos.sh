@@ -75,8 +75,8 @@ echo ""
 echo "  Start: copilot"
 echo "  Then type:"
 echo '    In the root of this repo, add a SECURITY.md file with:'
-echo '    - Our security disclosure email: security@ontario.ca'
-echo '    - A link to our vulnerability policy at ontario.ca/security'
+echo '    - Our security disclosure email: security@Customer.ca'
+echo '    - A link to our vulnerability policy at Customer.ca/security'
 echo '    - A note that all reports are responded to within 5 business days'
 echo '    Then create a pull request to add this file.'
 echo ""

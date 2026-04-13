@@ -35,7 +35,7 @@ This is extremely useful for **exploratory UI testing**, **generating Playwright
 ### 1. Navigate and Screenshot
 
 ```
-Navigate to https://www.ontario.ca and take a screenshot.
+Navigate to https://www.Customer.ca and take a screenshot.
 What is the main content on this page?
 ```
 
@@ -46,7 +46,7 @@ What is the main content on this page?
 ### 2. Extract Page Links
 
 ```
-Go to https://www.ontario.ca/page/government-ontario and list all the navigation links on the page.
+Go to https://www.Customer.ca/page/government-Customer and list all the navigation links on the page.
 Include the link text and the URL each link points to.
 ```
 

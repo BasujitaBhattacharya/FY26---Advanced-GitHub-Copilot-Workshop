@@ -4,7 +4,7 @@
 
 using System.Web.Http;
 
-namespace OntarioPermits.App_Start
+namespace CustomerPermits.App_Start
 {
     /// <summary>Web API 2 routing and configuration entry point.</summary>
     /// <remarks>

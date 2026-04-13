@@ -111,7 +111,7 @@ Steps:
 **Best choice:** Background Agent
 
 ```text
-Add audit logging middleware to the OntarioPermits API:
+Add audit logging middleware to the CustomerPermits API:
 1. Create Middleware/AuditMiddleware.cs that logs (timestamp, method, path, status,
    duration, user identity) to ILogger<AuditMiddleware>
 2. Register it in Program.cs after UseAuthentication

@@ -1,5 +1,5 @@
 -- =============================================================================
--- OntarioPermits Database Schema
+-- CustomerPermits Database Schema
 -- Module 07 — Databases with GitHub Copilot
 --
 -- Target: SQL Server LocalDB / SQL Server 2019+
@@ -15,13 +15,13 @@ GO
 -- Create the database if it doesn't exist
 IF NOT EXISTS (SELECT name
 FROM sys.databases
-WHERE name = N'OntarioPermits')
+WHERE name = N'CustomerPermits')
 BEGIN
-    CREATE DATABASE OntarioPermits;
+    CREATE DATABASE CustomerPermits;
 END
 GO
 
-USE OntarioPermits;
+USE CustomerPermits;
 GO
 
 -- =============================================================================
@@ -174,5 +174,5 @@ VALUES
     (N'P-000006', N'PENDING', N'CANCELLED', N'jane.doe', N'Applicant withdrew application');
 GO
 
-PRINT 'OntarioPermits schema and seed data created successfully.';
+PRINT 'CustomerPermits schema and seed data created successfully.';
 GO

@@ -113,7 +113,7 @@ mindmap
 └── docs/
     ├── coding-agents.md         ← Coding Agent: issue → PR lifecycle
     ├── code-review.md           ← AI code review + copilot-review-instructions.md
-    └── copilot-spaces.md        ← Spaces: knowledge sources + Ontario use cases
+    └── copilot-spaces.md        ← Spaces: knowledge sources + Customer use cases
 ```
 
 ---

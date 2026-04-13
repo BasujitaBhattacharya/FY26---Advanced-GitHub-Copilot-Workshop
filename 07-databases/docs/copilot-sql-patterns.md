@@ -1,6 +1,6 @@
 # Copilot SQL Patterns
 
-> **Goal:** Learn the prompt patterns that give Copilot enough context to generate correct, safe, and performant T-SQL for the OntarioPermits schema.
+> **Goal:** Learn the prompt patterns that give Copilot enough context to generate correct, safe, and performant T-SQL for the CustomerPermits schema.
 
 ---
 
@@ -18,13 +18,13 @@ Always give Copilot three things:
 
 **Prompt template:**
 ```text
-Using the OntarioPermits database, write a T-SQL SELECT query to [requirement].
+Using the CustomerPermits database, write a T-SQL SELECT query to [requirement].
 Target SQL Server 2019+.
 ```
 
 **Example:**
 ```text
-Using the OntarioPermits database, write a T-SQL SELECT query to find all permits
+Using the CustomerPermits database, write a T-SQL SELECT query to find all permits
 submitted in the last 7 days that are still PENDING. Show the permit ID, applicant
 full name, region, and number of days pending. Order by days pending descending.
 ```
@@ -181,7 +181,7 @@ Before committing any Copilot-generated SQL, verify:
 
 ## Enterprise Context Prompts
 
-These work especially well with the OntarioPermits schema:
+These work especially well with the CustomerPermits schema:
 
 ```text
 "Generate a query for a weekly management report: number of permits received,

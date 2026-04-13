@@ -1,12 +1,12 @@
 -- =============================================================================
--- OntarioPermits — Stored Procedures
+-- CustomerPermits — Stored Procedures
 -- Module 07 — Databases with GitHub Copilot
 --
 -- Demonstrates Copilot's before/after stored procedure refactoring.
 -- Each procedure includes the Copilot prompt that generated the improvement.
 -- =============================================================================
 
-USE OntarioPermits;
+USE CustomerPermits;
 GO
 
 -- =============================================================================

@@ -7,7 +7,7 @@
 
 ---
 
-## Schema Overview — OntarioPermits
+## Schema Overview — CustomerPermits
 
 ```mermaid
 erDiagram
@@ -61,7 +61,7 @@ erDiagram
 flowchart LR
     A[📝 Business Requirement\nin plain English] --> B[💬 Copilot Chat:\nNatural language → SQL]
     B --> C[🔌 mssql extension:\nConnect to LocalDB]
-    C --> D[▶️ Run query\n against OntarioPermits]
+    C --> D[▶️ Run query\n against CustomerPermits]
     D --> E{Results\ncorrect?}
     E -- "❌ Wrong" --> F[Copilot explains\nand fixes]
     F --> D
@@ -86,7 +86,7 @@ sequenceDiagram
     VS-->>Dev: Extension installed
     Dev->>VS: Ctrl+Shift+P → MS SQL: Add Connection
     VS-->>Dev: Connection profile picker
-    Dev->>VS: Server: (localdb)\\MSSQLLocalDB\nDatabase: OntarioPermits\nAuth: Windows
+    Dev->>VS: Server: (localdb)\\MSSQLLocalDB\nDatabase: CustomerPermits\nAuth: Windows
     VS-->>DB: Connect
     DB-->>VS: Connected ✅
     Dev->>VS: Open schema.sql → Run Query
@@ -120,12 +120,12 @@ sequenceDiagram
 
 ```bash
 # 1. Ensure SQL Server LocalDB is installed (comes with Visual Studio)
-sqllocaldb create OntarioPermits
-sqllocaldb start OntarioPermits
+sqllocaldb create CustomerPermits
+sqllocaldb start CustomerPermits
 
 # 2. Connect via mssql extension (Ctrl+Shift+P → MS SQL: Add Connection)
 #    Server:   (localdb)\MSSQLLocalDB
-#    Database: OntarioPermits
+#    Database: CustomerPermits
 #    Auth:     Windows Authentication
 
 # 3. Open schema.sql in VS Code and press Ctrl+Shift+E to run

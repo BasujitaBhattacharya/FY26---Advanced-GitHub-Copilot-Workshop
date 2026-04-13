@@ -28,5 +28,5 @@ It contains 10 self-contained learning modules covering: customization, VS Code 
 
 - When asked to modify workshop content, preserve the teaching intent of the file
 - When generating sample code, include inline comments explaining the Copilot technique being demonstrated
-- When editing SQL samples, target the `OntarioPermits` schema defined in `07-databases/samples/schema.sql`
+- When editing SQL samples, target the `CustomerPermits` schema defined in `07-databases/samples/schema.sql`
 - When suggesting improvements to instruction files, explain the rationale as a comment in the file

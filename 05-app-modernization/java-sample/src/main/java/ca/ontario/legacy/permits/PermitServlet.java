@@ -16,7 +16,7 @@
  * - @ConfigurationProperties for config
  * - Constructor injection with @RequiredArgsConstructor
  */
-package ca.ontario.legacy.permits;
+package ca.Customer.legacy.permits;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,7 +31,7 @@ import java.sql.*;
 public class PermitServlet extends HttpServlet {
 
     // LEGACY: Hard-coded DB connection — should be in datasource config or env var
-    private static final String DB_URL = "jdbc:sqlserver://localhost;databaseName=OntarioPermits;integratedSecurity=true";
+    private static final String DB_URL = "jdbc:sqlserver://localhost;databaseName=CustomerPermits;integratedSecurity=true";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

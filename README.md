@@ -93,7 +93,7 @@ mindmap
 | [04](04-copilot-cli/README.md) | **Copilot CLI** | Standalone `copilot` AI agent in your terminal — interactive sessions, plan mode (`Shift+Tab`), programmatic mode (`copilot -p "..."`), local code + GitHub.com tasks (PRs, issues, workflows), `/fleet` for parallel subagents, customization (MCP servers, custom agents, Copilot Memory) | 30 min |
 | [05](05-app-modernization/README.md) | **App Modernization** | .NET Upgrade Assistant (Framework 4.7 → .NET 8, incremental steps), Java Modernization Assistant (Java 8 → 17/21), hands-on legacy .NET Web API sample | 45 min |
 | [06](06-qa-testing/README.md) | **QA & Testing** | xUnit + Moq unit tests via `generate-tests` prompt, integration tests with `WebApplicationFactory`, Playwright end-to-end UI tests, Agent mode test planning | 50 min |
-| [07](07-databases/README.md) | **Databases** | mssql VS Code extension, natural-language → T-SQL with Copilot, real `OntarioPermits` schema (Regions, Applicants, Permits, StatusHistory), stored procedures, SQL security review | 35 min |
+| [07](07-databases/README.md) | **Databases** | mssql VS Code extension, natural-language → T-SQL with Copilot, real `CustomerPermits` schema (Regions, Applicants, Permits, StatusHistory), stored procedures, SQL security review | 35 min |
 | [08](08-models-context/README.md) | **Models & Context** | All Copilot-supported models (Anthropic, Google, OpenAI, xAI, GitHub), speed vs reasoning quadrant, premium request multipliers, context window management strategies | 25 min |
 | [09](09-copilot-on-github/README.md) | **Copilot on GitHub.com** | Copilot Coding Agent (issue → PR lifecycle), AI code review on pull requests, Copilot Spaces as knowledge hubs, `copilot-review-instructions.md` | 35 min |
 | [10](10-hands-on-lab/README.md) | **Hands-on Lab** | 5 self-contained exercises: Customization, Background Agent, GitHub Remote MCP, .NET Modernization, Test Generation — each 15 min, ~90 min total. **BONUS:** Permit Dashboard Streamlit app for GitHub Coding Agent demos | 90 min |
@@ -184,7 +184,7 @@ GitHubCopilot-AdvancedRepo/
 ├── 04-copilot-cli/                    ← CLI features, Fleet, annotated demos
 ├── 05-app-modernization/              ← .NET 4.7 sample, Java 8 sample, migration docs
 ├── 06-qa-testing/                     ← xUnit tests, Playwright samples, test plan docs
-├── 07-databases/                      ← mssql config, OntarioPermits schema + seed data, SQL docs
+├── 07-databases/                      ← mssql config, CustomerPermits schema + seed data, SQL docs
 ├── 08-models-context/                 ← Model reference table, multipliers, context management
 ├── 09-copilot-on-github/              ← Coding Agent docs, code review setup, Spaces guide
 └── 10-hands-on-lab/                   ← 5 exercises + prerequisites checklist

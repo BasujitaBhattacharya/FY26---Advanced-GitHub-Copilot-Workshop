@@ -1,7 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
 /**
- * Playwright configuration for the Ontario service portal mock.
+ * Playwright configuration for the Customerr service portal mock.
  * See: https://playwright.dev/docs/test-configuration
  */
 export default defineConfig({

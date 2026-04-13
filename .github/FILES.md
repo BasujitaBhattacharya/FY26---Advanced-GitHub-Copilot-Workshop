@@ -17,7 +17,7 @@
 | [`prompts/code-review.prompt.md`](prompts/code-review.prompt.md) | Prompt file | Opens in VS Code prompt picker — run a structured code review on selected code. |
 | [`prompts/generate-tests.prompt.md`](prompts/generate-tests.prompt.md) | Prompt file | Generates xUnit + Moq tests for a selected C# class. |
 | [`prompts/explain-legacy.prompt.md`](prompts/explain-legacy.prompt.md) | Prompt file | Explains legacy .NET Framework code and suggests modern equivalents. |
-| [`prompts/sql-query.prompt.md`](prompts/sql-query.prompt.md) | Prompt file | Generates or optimises a SQL query against the OntarioPermits schema. |
+| [`prompts/sql-query.prompt.md`](prompts/sql-query.prompt.md) | Prompt file | Generates or optimises a SQL query against the CustomerPermits schema. |
 | [`prompts/modernize-dotnet.prompt.md`](prompts/modernize-dotnet.prompt.md) | Prompt file | Guides incremental migration from .NET Framework to .NET 8. |
 
 To use a prompt file: open Copilot Chat → click the **Attach** (paperclip) icon → **Prompt Files** → select from the list.

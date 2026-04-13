@@ -69,7 +69,7 @@ All five prompt files live in `.github/prompts/` and are **active right now** in
 | [code-review.prompt.md](../../.github/prompts/code-review.prompt.md) | Select code → pick prompt | Structured C# code review (5 criteria) |
 | [generate-tests.prompt.md](../../.github/prompts/generate-tests.prompt.md) | Select class → pick prompt | xUnit + Moq tests with full coverage |
 | [explain-legacy.prompt.md](../../.github/prompts/explain-legacy.prompt.md) | Select legacy code → pick prompt | Explanation + modern .NET equivalents |
-| [sql-query.prompt.md](../../.github/prompts/sql-query.prompt.md) | Pick prompt → type request | T-SQL query for OntarioPermits schema |
+| [sql-query.prompt.md](../../.github/prompts/sql-query.prompt.md) | Pick prompt → type request | T-SQL query for CustomerPermits schema |
 | [modernize-dotnet.prompt.md](../../.github/prompts/modernize-dotnet.prompt.md) | Select code → pick prompt | Incremental .NET Framework → .NET 8 migration |
 
 ---

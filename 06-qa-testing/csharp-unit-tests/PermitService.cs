@@ -2,10 +2,10 @@
 // Service Under Test (SUT) for Module 06 — QA & Testing
 // This is the implementation that Copilot will generate tests against.
 
-using OntarioPermits.Models;
-using OntarioPermits.Repositories;
+using CustomerPermits.Models;
+using CustomerPermits.Repositories;
 
-namespace OntarioPermits.Services;
+namespace CustomerPermits.Services;
 
 /// <summary>Handles business logic for permit submissions and status tracking.</summary>
 public sealed class PermitService : IPermitService
@@ -19,7 +19,7 @@ public sealed class PermitService : IPermitService
         ArgumentNullException.ThrowIfNull(repository);
         ArgumentNullException.ThrowIfNull(logger);
         _repository = repository;
-        _logger     = logger;
+        _logger = logger;
     }
 
     /// <inheritdoc />
@@ -36,10 +36,10 @@ public sealed class PermitService : IPermitService
 
         var permit = new Permit
         {
-            PermitId  = Guid.NewGuid().ToString("N")[..8].ToUpper(),
+            PermitId = Guid.NewGuid().ToString("N")[..8].ToUpper(),
             Reference = request.Reference,
-            Type      = request.Type,
-            Status    = PermitStatus.Pending,
+            Type = request.Type,
+            Status = PermitStatus.Pending,
             CreatedAt = DateTimeOffset.UtcNow,
         };
 

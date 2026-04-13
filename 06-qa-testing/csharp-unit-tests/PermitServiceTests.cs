@@ -5,11 +5,11 @@
 
 using Microsoft.Extensions.Logging;
 using Moq;
-using OntarioPermits.Models;
-using OntarioPermits.Repositories;
-using OntarioPermits.Services;
+using CustomerPermits.Models;
+using CustomerPermits.Repositories;
+using CustomerPermits.Services;
 
-namespace OntarioPermits.Tests.Services;
+namespace CustomerPermits.Tests.Services;
 
 public class PermitServiceTests
 {
@@ -17,15 +17,15 @@ public class PermitServiceTests
     // Test fixture setup — Copilot identifies mocked dependencies from constructor
     // ──────────────────────────────────────────────────────────────────────────
 
-    private readonly Mock<IPermitRepository>      _mockRepo;
+    private readonly Mock<IPermitRepository> _mockRepo;
     private readonly Mock<ILogger<PermitService>> _mockLogger;
-    private readonly PermitService                _sut;
+    private readonly PermitService _sut;
 
     public PermitServiceTests()
     {
-        _mockRepo   = new Mock<IPermitRepository>();
+        _mockRepo = new Mock<IPermitRepository>();
         _mockLogger = new Mock<ILogger<PermitService>>();
-        _sut        = new PermitService(_mockRepo.Object, _mockLogger.Object);
+        _sut = new PermitService(_mockRepo.Object, _mockLogger.Object);
     }
 
     // ──────────────────────────────────────────────────────────────────────────

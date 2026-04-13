@@ -1090,7 +1090,7 @@ sectionSlide(pres, "06", "QA & Testing", "xUnit · Moq · Playwright · AI-gener
 // ══════════════════════════════════════════════════════════════════════════════
 // MODULE 07 ─ DATABASES
 // ══════════════════════════════════════════════════════════════════════════════
-sectionSlide(pres, "07", "Databases", "mssql extension · OntarioPermits schema · T-SQL patterns");
+sectionSlide(pres, "07", "Databases", "mssql extension · CustomerPermits schema · T-SQL patterns");
 
 {
     const s = contentSlide(pres, "Module 07 — mssql Extension & Copilot SQL Patterns");
@@ -1099,7 +1099,7 @@ sectionSlide(pres, "07", "Databases", "mssql extension · OntarioPermits schema 
         x: 0.3, y: 0.73, w: 9.4, h: 0.28, fontFace: FONT, fontSize: 11.5, color: C.textMuted, italic: true,
     });
 
-    s.addText("OntarioPermits Schema:", {
+    s.addText("CustomerPermits Schema:", {
         x: 0.3, y: 1.08, w: 2.5, h: 0.28, fontFace: FONT, fontSize: 12.5, bold: true, color: C.cobalLight,
     });
     const tables = [

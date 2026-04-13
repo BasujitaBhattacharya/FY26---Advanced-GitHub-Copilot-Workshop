@@ -22,11 +22,11 @@ test.describe('Permit Submission Form', () => {
     async ({ page }) => {
       // Fill the form using labels (accessibility-first locators)
       await page.getByLabel('Applicant Name').fill('Jane Doe');
-      await page.getByLabel('Email').fill('jane.doe@ontario.ca');
+      await page.getByLabel('Email').fill('jane.doe@Customer.ca');
       await page.getByLabel('Permit Type').selectOption('CONSTRUCTION');
       await page.getByLabel('Region').selectOption('TORONTO');
       await page.getByLabel('Project Description')
-                .fill('Office renovation at 100 Queen St W, Toronto');
+        .fill('Office renovation at 100 Queen St W, Toronto');
 
       // Submit
       await page.getByRole('button', { name: 'Submit Application' }).click();
@@ -35,7 +35,7 @@ test.describe('Permit Submission Form', () => {
       await expect(page.getByRole('heading', { name: 'Application Submitted' }))
         .toBeVisible();
 
-      // Confirmation number should match Ontario permit format P-######
+      // Confirmation number should match Customer permit format P-######
       await expect(page.getByTestId('confirmation-number'))
         .toHaveText(/^P-\d{6}$/);
 
@@ -80,7 +80,7 @@ test.describe('Permit Submission Form', () => {
 
   test('should show only name error when only name is empty',
     async ({ page }) => {
-      await page.getByLabel('Email').fill('valid@ontario.ca');
+      await page.getByLabel('Email').fill('valid@Customer.ca');
       await page.getByLabel('Permit Type').selectOption('ELECTRICAL');
 
       await page.getByRole('button', { name: 'Submit Application' }).click();

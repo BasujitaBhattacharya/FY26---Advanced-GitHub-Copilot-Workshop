@@ -32,7 +32,7 @@ Connect GitHub Copilot Agent mode to your Azure subscription — list resources,
 ### 1. List All Resources in a Resource Group
 
 ```
-List all resources in the rg-ontario-permits-dev resource group.
+List all resources in the rg-Customer-permits-dev resource group.
 Include resource type, name, location, and current status.
 ```
 
@@ -43,7 +43,7 @@ Include resource type, name, location, and current status.
 ### 2. Inspect Storage Account
 
 ```
-What containers and blobs are in the storage account stontariopermits?
+What containers and blobs are in the storage account stCustomerpermits?
 How much total data is stored?
 ```
 
@@ -67,7 +67,7 @@ Show the App Service configuration for app-permit-api including:
 ### 4. List Key Vault Secret Names
 
 ```
-List all secret names in the kv-ontario-permits Key Vault.
+List all secret names in the kv-Customer-permits Key Vault.
 Do not show the secret values — just the names and their expiry dates.
 ```
 
@@ -78,7 +78,7 @@ Do not show the secret values — just the names and their expiry dates.
 ### 5. Check Resource Group Status
 
 ```
-What is the current state of all resources in rg-ontario-permits-prod?
+What is the current state of all resources in rg-Customer-permits-prod?
 Are there any resources in a failed or degraded state?
 ```
 

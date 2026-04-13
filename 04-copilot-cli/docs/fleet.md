@@ -128,7 +128,7 @@ Use the `/model` command to see the currently selected model and its multiplier.
 ```
 /fleet
 
-Our Ontario Permits API has 8 service classes under src/Services/.
+Our Customer Permits API has 8 service classes under src/Services/.
 For each service class:
 1. Generate a complete xUnit test file with Moq — cover happy path, null input, and exception paths
 2. Use @test-writer to write the tests

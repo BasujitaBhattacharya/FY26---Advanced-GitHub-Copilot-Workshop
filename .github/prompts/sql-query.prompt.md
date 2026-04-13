@@ -1,11 +1,11 @@
 ---
 name: "SQL Query"
-description: "Generates or optimises a T-SQL query for the OntarioPermits database schema"
+description: "Generates or optimises a T-SQL query for the CustomerPermits database schema"
 ---
 
 # SQL Query Assistant
 
-Help me write or optimise a T-SQL query for the **OntarioPermits** database.
+Help me write or optimise a T-SQL query for the **CustomerPermits** database.
 
 ## Schema Reference
 

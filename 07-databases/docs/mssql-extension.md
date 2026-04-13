@@ -15,15 +15,15 @@ code --install-extension ms-mssql.mssql
 
 ---
 
-## Connect to OntarioPermits LocalDB
+## Connect to CustomerPermits LocalDB
 
 ```mermaid
 flowchart TD
     A[Ctrl+Shift+P] --> B[MS SQL: Add Connection\nor MS SQL: Connect]
     B --> C[Enter server:\n localdb\\MSSQLLocalDB]
-    C --> D[Enter database:\nOntarioPermits]
+    C --> D[Enter database:\nCustomerPermits]
     D --> E[Auth type:\nWindows Authentication]
-    E --> F[Profile name:\nOntarioPermits LocalDB]
+    E --> F[Profile name:\nCustomerPermits LocalDB]
     F --> G[✅ Connected — status bar shows server]
 
     style G fill:#2e7d32,color:#fff
@@ -34,9 +34,9 @@ flowchart TD
 | Field | Value |
 |---|---|
 | Server | `(localdb)\MSSQLLocalDB` |
-| Database | `OntarioPermits` |
+| Database | `CustomerPermits` |
 | Authentication | Windows Authentication (Integrated) |
-| Profile name | `OntarioPermits LocalDB` |
+| Profile name | `CustomerPermits LocalDB` |
 
 > The `.vscode/settings.json` in this module pre-configures the profile. Open the settings file and VS Code will prompt to use it.
 
@@ -45,9 +45,9 @@ flowchart TD
 ## First Run — Create the Schema
 
 1. Open `samples/schema.sql` in VS Code
-2. Ensure the mssql status bar shows `OntarioPermits LocalDB`
+2. Ensure the mssql status bar shows `CustomerPermits LocalDB`
 3. Press `Ctrl+Shift+E` to execute the entire file
-4. The Output pane will show `OntarioPermits schema and seed data created successfully.`
+4. The Output pane will show `CustomerPermits schema and seed data created successfully.`
 
 ---
 
@@ -74,7 +74,7 @@ With the mssql extension connected, Copilot's suggestions are **schema-aware**:
 
 ### Example — schema-aware Copilot
 
-With `OntarioPermits` connected, typing this prompt in Copilot Chat:
+With `CustomerPermits` connected, typing this prompt in Copilot Chat:
 
 ```text
 Write a query that joins Permits to Applicants and Regions to show
@@ -100,7 +100,7 @@ Copilot will use the **actual column names** from your connected database (via I
 
 | Issue | Solution |
 |---|---|
-| `(localdb)\MSSQLLocalDB` not found | Run `sqllocaldb create OntarioPermits` in a Developer Command Prompt |
+| `(localdb)\MSSQLLocalDB` not found | Run `sqllocaldb create CustomerPermits` in a Developer Command Prompt |
 | LocalDB not started | `sqllocaldb start MSSQLLocalDB` |
 | IntelliSense not loading | Click the server name in status bar → Refresh IntelliSense |
 | Extension not connecting | Check VS Code Output → MS SQL for error details |

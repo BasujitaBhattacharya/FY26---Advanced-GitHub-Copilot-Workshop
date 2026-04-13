@@ -2,9 +2,9 @@
   "mssql.connections": [
     {
       "server": "(localdb)\\MSSQLLocalDB",
-      "database": "OntarioPermits",
+      "database": "CustomerrPermits",
       "authenticationType": "Integrated",
-      "profileName": "OntarioPermits LocalDB",
+      "profileName": "CustomerrPermits LocalDB",
       "savePassword": true
     }
   ],

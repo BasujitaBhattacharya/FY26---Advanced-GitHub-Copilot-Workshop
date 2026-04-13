@@ -9,7 +9,7 @@
 ```mermaid
 flowchart TB
     subgraph "E2E Tests — Playwright"
-        E[Browser ↔ Ontario Portal\nSlowest · Most realistic\nTests full user journey]
+        E[Browser ↔ Customer Portal\nSlowest · Most realistic\nTests full user journey]
     end
     subgraph "Integration Tests — TestServer"
         I[HTTP ↔ ASP.NET Core API\nMedium speed\nReal DI, real DB optional]
@@ -40,7 +40,7 @@ flowchart TB
 ### Project setup
 
 ```xml
-<!-- tests/OntarioPermits.Tests.csproj -->
+<!-- tests/CustomerPermits.Tests.csproj -->
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -55,7 +55,7 @@ flowchart TB
     <PackageReference Include="FluentAssertions" Version="6.*" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="../src/OntarioPermits.csproj" />
+    <ProjectReference Include="../src/CustomerPermits.csproj" />
   </ItemGroup>
 </Project>
 ```
@@ -75,7 +75,7 @@ flowchart TB
 public async Task SubmitPermit_WhenApplicantIsValid_ReturnsPendingStatus()
 {
     // Arrange
-    var applicant  = new Applicant("Jane Doe", "jane@ontario.ca");
+    var applicant  = new Applicant("Jane Doe", "jane@Customer.ca");
     var permitData = new PermitRequest(applicant, PermitType.Construction);
     _mockRepo.Setup(r => r.SaveAsync(It.IsAny<Permit>()))
              .ReturnsAsync(true);

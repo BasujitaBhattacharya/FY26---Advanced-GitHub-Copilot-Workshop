@@ -22,7 +22,7 @@ Agent mode can:
 
 ```csharp
 // Services/IPermitSubmissionService.cs
-namespace OntarioPermits.Services;
+namespace CustomerPermits.Services;
 
 /// <summary>Handles submission and tracking of permit applications.</summary>
 public interface IPermitSubmissionService
@@ -93,11 +93,11 @@ Copilot will produce a table similar to:
 ```csharp
 // PermitSubmissionServiceTests.cs (Copilot-generated — review before committing)
 using Moq;
-using OntarioPermits.Repositories;
-using OntarioPermits.Services;
-using OntarioPermits.Models;
+using CustomerPermits.Repositories;
+using CustomerPermits.Services;
+using CustomerPermits.Models;
 
-namespace OntarioPermits.Tests.Services;
+namespace CustomerPermits.Tests.Services;
 
 public class PermitSubmissionServiceTests
 {

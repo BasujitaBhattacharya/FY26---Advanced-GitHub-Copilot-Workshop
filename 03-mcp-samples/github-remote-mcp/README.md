@@ -4,7 +4,7 @@ Connect GitHub Copilot Agent mode to GitHub's own API — search issues, create 
 
 **This is GitHub's official remote MCP server** — it runs in GitHub's cloud, so there's nothing to install locally beyond authentication.
 
-**Source:** [github.com/github/github-mcp-server](https://github.com/github/github-mcp-server)  
+**Source:** [github.com/github/github-mcp-server](https://github.com/github/github-mcp-server)
 **Endpoint:** `https://api.githubcopilot.com/mcp/`
 
 ---
@@ -46,7 +46,7 @@ Connect GitHub Copilot Agent mode to GitHub's own API — search issues, create 
 ### 1. Find Open Bugs
 
 ```
-Find all open issues labelled 'bug' in the ontario/permit-system repo.
+Find all open issues labelled 'bug' in the Customer/permit-system repo.
 Sort by most recently updated. Include title, author, and days open.
 ```
 
@@ -58,7 +58,7 @@ Sort by most recently updated. Include title, author, and days open.
 
 ```
 Create a pull request from branch feature/add-permit-validation to main
-in the ontario/permit-system repo.
+in the Customer/permit-system repo.
 
 Title: "feat: add input validation for permit submission"
 Body: "Adds FluentValidation rules for the PermitCreateRequest model.
@@ -72,7 +72,7 @@ Closes #1847."
 ### 3. Summarise a Pull Request
 
 ```
-Summarise the changes in PR #42 in ontario/permit-system.
+Summarise the changes in PR #42 in Customer/permit-system.
 What files were changed? What's the overall intent of the PR?
 Are there any reviewer comments still unresolved?
 ```
@@ -84,7 +84,7 @@ Are there any reviewer comments still unresolved?
 ### 4. Check Workflow Status
 
 ```
-What GitHub Actions workflows are defined in ontario/permit-system?
+What GitHub Actions workflows are defined in Customer/permit-system?
 Which ones ran in the last 24 hours and what was the result of each run?
 ```
 
@@ -95,7 +95,7 @@ Which ones ran in the last 24 hours and what was the result of each run?
 ### 5. Recent Commit History
 
 ```
-Show the last 10 commits on the main branch of ontario/permit-system.
+Show the last 10 commits on the main branch of Customer/permit-system.
 Include author, date, commit message, and which files were changed.
 ```
 
