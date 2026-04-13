@@ -10,7 +10,7 @@ import AxeBuilder from '@axe-core/playwright';
  *  and focus management after form submission. Target WCAG tags:
  *  wcag2a, wcag2aa, wcag21aa."
  *
- * Ontario government standard: AODA — WCAG 2.0 Level AA minimum.
+ * Customer <Name> standard: AODA — WCAG 2.0 Level AA minimum.
  */
 test.describe('Accessibility — WCAG 2.1 AA', () => {
 

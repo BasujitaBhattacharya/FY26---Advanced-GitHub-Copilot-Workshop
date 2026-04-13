@@ -111,7 +111,7 @@ Use the `/model` command to see the currently selected model and its multiplier.
 
 ---
 
-## Ontario Government Use Cases
+## Customer <Name> Use Cases
 
 | Task | Why /fleet helps |
 |------|-----------------|

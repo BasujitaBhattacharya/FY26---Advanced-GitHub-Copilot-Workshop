@@ -50,7 +50,7 @@ flowchart TD
 
 ---
 
-## Worked Examples — Ontario Government Context
+## Worked Examples — Customer <Name> Context
 
 ### Example 1 — "What does this method do?"
 
@@ -152,7 +152,7 @@ Add audit logging middleware to the OntarioPermits API:
 
 ---
 
-## Ontario Government Scenario Map
+## Customer <Name> Scenario Map
 
 | Scenario | Recommended | Rationale |
 |---|---|---|

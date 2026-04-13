@@ -13,7 +13,7 @@ Java modernization typically involves two axes:
 | **Language / JDK version** | Java 8 → 17 or 21 | Rewriting deprecated APIs, records, sealed classes, pattern matching |
 | **Framework** | J2EE / Servlet → Spring Boot 3 | Generating `@RestController`, `application.yml`, dependency injection |
 
-The Ontario Government's legacy Java estate is largely **Java 8 + Servlets** running on WebSphere or Tomcat. The target state is **Java 21 + Spring Boot 3** on Azure Container Apps or Azure App Service.
+The Customer <Name>'s legacy Java estate is largely **Java 8 + Servlets** running on WebSphere or Tomcat. The target state is **Java 21 + Spring Boot 3** on Azure Container Apps or Azure App Service.
 
 ---
 

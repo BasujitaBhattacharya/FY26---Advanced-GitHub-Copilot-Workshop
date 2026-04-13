@@ -20,7 +20,7 @@ flowchart TD
 
 ---
 
-## Use Cases for Ontario Government
+## Use Cases for Customer <Name>
 
 | Use Case | What to put in org instructions |
 |----------|--------------------------------|
