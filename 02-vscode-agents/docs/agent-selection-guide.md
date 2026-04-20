@@ -137,14 +137,14 @@ Add audit logging middleware to the CustomerPermits API:
 
 **Task:** A specific NullReferenceException on line 47 of `PermitRepository.cs`.
 
-**Best choice:** Edit Mode
+**Best choice:** Agent Mode
 
 ```text
 The call to permit.Region.Name on line 47 throws NullReferenceException when
 Region is null. Apply a null-conditional fix that returns "Unknown" as the default.
 ```
 
-*Why Edit Mode:* Single targeted change, you want to review the diff before accepting.
+*Why Agent Mode:* Single targeted change, you want to review the diff before accepting.
 
 ---
 
