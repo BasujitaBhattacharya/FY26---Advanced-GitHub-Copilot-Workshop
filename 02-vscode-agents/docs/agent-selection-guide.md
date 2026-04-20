@@ -71,18 +71,23 @@ suitable for a non-developer business analyst.
 
 ---
 
-### Example 2 — "Fix a null reference bug"
+### Example 2 — "Generate a test plan for the permit submission flow"
 
-**Task:** A specific NullReferenceException on line 47 of `PermitRepository.cs`.
+**Task:** Given a C# interface, produce a comprehensive test plan and generate the xUnit tests.
 
-**Best choice:** Edit Mode
+**Best choice:** Plan Mode first, then hand off to Agent Mode
 
 ```text
-The call to permit.Region.Name on line 47 throws NullReferenceException when
-Region is null. Apply a null-conditional fix that returns "Unknown" as the default.
+/generate-tests
+#file:Services/IPermitSubmissionService.cs
+
+After reviewing the plan, hand off implementation to Agent Mode to generate the tests,
+run them, and iterate on any failures.
 ```
 
-*Why Edit Mode:* Single targeted change, you want to review the diff before accepting.
+*Why Plan Mode first:* Test generation benefits from separating planning from implementation. Plan Mode helps clarify scope, identify scenarios and edge cases, and produce a structured test strategy before any code is written.
+
+*How to hand off to Agent Mode:* Once the plan looks right, continue in the same chat or use the Plan-to-Agent handoff to ask Agent Mode to implement the approved test plan, generate the xUnit tests, run them, and fix any failures.
 
 ---
 
@@ -128,18 +133,18 @@ Add audit logging middleware to the CustomerPermits API:
 
 ---
 
-### Example 5 — "Generate a test plan for the permit submission flow"
+### Example 5 — "Fix a null reference bug"
 
-**Task:** Given a C# interface, produce a comprehensive test plan and generate the xUnit tests.
+**Task:** A specific NullReferenceException on line 47 of `PermitRepository.cs`.
 
-**Best choice:** Agent Mode with `generate-tests.prompt.md`
+**Best choice:** Edit Mode
 
 ```text
-/generate-tests
-#file:Services/IPermitSubmissionService.cs
+The call to permit.Region.Name on line 47 throws NullReferenceException when
+Region is null. Apply a null-conditional fix that returns "Unknown" as the default.
 ```
 
-*Why Agent Mode:* Uses the `.github/prompts/generate-tests.prompt.md` file, benefits from tool use (reading related files, running tests), but needs to stay interactive for iterative feedback.
+*Why Edit Mode:* Single targeted change, you want to review the diff before accepting.
 
 ---
 
