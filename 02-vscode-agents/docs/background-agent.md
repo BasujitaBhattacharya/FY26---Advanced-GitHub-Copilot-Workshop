@@ -6,6 +6,36 @@ Background Agent lets you assign a long-horizon task to Copilot and walk away. I
 
 ## What It Is
 
+Background agents in VS Code, powered by **GitHub Copilot CLI**,Delete. They are ideal for complex, multi-step tasks like:
+
+- Refactoring large codebases
+- Writing tests across multiple files
+- Implementing features end-to-end
+
+Key capabilities:
+
+- **Isolated changes** — often utilise Git worktrees to keep agent changes separate from your active work
+- **Unified management** — start, monitor, and manage Copilot CLI sessions from the **Chat** view in VS Code
+- **Local execution** — agents run autonomously on your local machine while you continue other work in the editor
+- **Parallelism** — run multiple Copilot CLI sessions simultaneously to tackle independent tasks at the same time
+
+---
+
+### Isolation Modes
+
+Copilot CLI supports two isolation modes that control how agent changes are applied to your codebase. You choose the mode when creating a new Copilot CLI session.
+
+| Mode | Behaviour |
+|------|-----------|
+| **Worktree** | VS Code creates a Git worktree in a separate folder. All agent changes are applied there, keeping them isolated from your main workspace until you review and apply them. |
+| **Workspace** | The agent operates directly in your current workspace. Changes are applied in place, with no separate worktree. |
+
+> **Worktree isolation** — Use this to prevent the agent from interfering with your active work. Changes remain separate until you're ready to review and merge them.
+>
+> **Workspace isolation** — Use this when you want agent changes applied directly to your current workspace as the agent works.
+
+---
+
 Background Agent is a **cloud-assisted, long-running agent** that:
 - Accepts a natural-language task description
 - Plans and executes changes across your codebase autonomously
@@ -22,9 +52,11 @@ It's designed for tasks that would take 10–30+ minutes manually: large refacto
 
 1. Open Copilot Chat (`Ctrl+Alt+I`)
 2. Switch to **Agent mode** using the mode selector
-3. Click **Start Background Task** (or use the `#background` keyword in your message)
+3. Select **Copilot CLI** (from the dropdown of delegate session)
 4. Describe your task clearly
-5. Copilot confirms the task, spins off the background work, and you're free to continue
+5. Pick Isolation Mode (Worktree or Workspace)
+6. Copilot confirms the task, spins off the background work, and you're free to continue
+7. Monitor progress in the **Sessions** view — you can see what it's doing, and it will get notification to view the changes and **Apply** these.
 
 ### Method 2: From a GitHub Issue
 
