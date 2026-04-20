@@ -2,12 +2,12 @@
 
 The **Copilot Coding Agent** is a fully cloud-hosted agent that runs entirely within the GitHub.com environment — no local VS Code session required.
 
-> **Deep coverage** of the Coding Agent (including Codex integration, Code Review, and Copilot Spaces) is in [Module 09 — Copilot on GitHub.com](../../09-copilot-on-github/README.md).  
+> **Deep coverage** of the Coding Agent (including Codex integration, Code Review, and Copilot Spaces) is in [Module 09 — Copilot on GitHub.com](../../09-copilot-on-github/README.md).
 > This page covers the core concept from a VS Code agent perspective.
 
 ---
 
-## What Makes It Different from Background Agent
+## What Makes It Different from VS Code Background Agent
 
 ```mermaid
 flowchart LR
@@ -28,12 +28,12 @@ flowchart LR
 
 | | Background Agent | Coding Agent |
 |-|-----------------|-------------|
-| **Where it runs** | VS Code + cloud | GitHub.com cloud |
-| **How to trigger** | VS Code chat | Assign GitHub Issue to Copilot |
+| **Where it runs** | VS Code + Copilot CLI | GitHub.com cloud |
+| **How to trigger** | VS Code chat + Delegate Session| Assign GitHub Issue to Copilot |
 | **Local repo access** | Yes | No (clones it) |
 | **MCP tools** | Your configured servers | GitHub-provided tools |
 | **Result** | PR opened | PR opened |
-| **Model** | Configurable | GPT-5.1-Codex / Claude agents |
+| **Model** | Configurable | GPT Codex / Claude agents(Model Picker) |
 
 ---
 
