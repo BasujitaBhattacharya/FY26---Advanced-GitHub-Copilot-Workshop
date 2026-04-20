@@ -14,7 +14,7 @@ flowchart TB
     subgraph LOCAL["🖥️ Local — VS Code (your machine)"]
         direction LR
         ASK["💬 Ask Mode\nConversational Q&A\nNo code changes"]
-        EDIT["✏️ Edit Mode\nDirect file edits\nYou review diffs"]
+        PLAN["✏️ Plan Mode\nGenerate Plan\nYou review/edit steps \nbefore implementation"]
         AGENT["🤖 Agent Mode\nAutonomous, multi-step\nUses tools + terminal"]
     end
 
