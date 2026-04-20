@@ -166,9 +166,10 @@ Region is null. Apply a null-conditional fix that returns "Unknown" as the defau
 |---|---|---|
 | Explain a WCF contract to a business analyst | Ask Mode | Read-only, plain-language explanation |
 | Fix a single SQL injection vulnerability | Agent Mode | Targeted surgical fix |
+| Break down a feature before coding | Plan Mode | Clarifies scope, edge cases, and implementation steps before handoff |
 | Modernise a full Web API 2 controller | Agent Mode | Multi-file, needs build + test iteration |
 | Add WCAG 2.1 AA attributes to 30 Razor views | Background Agent | Repetitive, multi-file, no supervision needed |
-| Generate test plan from a service interface | Agent Mode | Tool use + iterative feedback valuable |
+| Generate test plan from a service interface | Plan Mode, then Agent Mode | Plan Mode structures coverage first; Agent Mode implements and validates tests |
 | Scaffold a new `RegionController` CRUD | Agent Mode | Create + test + build loop |
 | Create nightly audit report from query results | Background Agent | Long-running, schedulable, produces PR |
 
