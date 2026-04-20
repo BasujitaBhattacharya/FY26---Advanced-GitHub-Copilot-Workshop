@@ -154,7 +154,7 @@ Region is null. Apply a null-conditional fix that returns "Unknown" as the defau
 |---|---|---|
 | Using Ask Mode for multi-file edits | Copilot produces code blocks you have to copy-paste manually | Use Edit or Agent Mode |
 | Using Background Agent for a 2-minute task | Overkill — background agent spins up a VM, queues work | Use Agent Mode interactively |
-| Using Edit Mode and expecting terminal commands | Edit Mode cannot run `dotnet build` — errors stay unresolved | Escalate to Agent Mode |
+| Using Plan Mode and expecting terminal commands | Plan Mode cannot run `dotnet build` — errors stay unresolved | Escalate to Agent Mode |
 | Not providing `#file` context in Ask Mode | Copilot answers generically, not about your specific code | Always attach relevant files |
 | Assigning an ambiguous task to Background Agent | Agent misinterprets scope; unwanted changes land in PR | Write precise, testable acceptance criteria |
 
