@@ -47,8 +47,8 @@ flowchart TD
     Q4{"Do I want to keep\nworking while it runs?"}
     Q5{"Is this tied to\na GitHub Issue?"}
 
-    A1["💬 Ask Mode\nFor questions,\nexplanations, plans"]
-    A2["✏️ Edit Mode\nFor targeted,\nknown changes"]
+    A1["💬 Ask Mode\nFor questions,\nexplanations"]
+    A2["✏️ Plan Mode\nFor targeted,\nstructured plans"]
     A3["🤖 Agent Mode (local)\nFor complex multi-file\ntasks with oversight"]
     A4["⚡ Background Agent\nFor long tasks, runs\nasync, returns a PR"]
     A5["☁️ Copilot Coding Agent\nFully delegated,\ncloud-hosted"]
@@ -57,6 +57,7 @@ flowchart TD
     Q1 -->|"2–10 min"| Q3
     Q1 -->|"> 10 min"| Q4
     Q2 -->|Yes| A2
+    A2 -->|Handoff implementation| A3
     Q2 -->|No, just explore| A1
     Q3 -->|No, I want to guide it| A3
     Q3 -->|Yes, well-defined| Q4
@@ -77,7 +78,7 @@ flowchart TD
 | [docs/sub-agents.md](docs/sub-agents.md) | Delegation patterns, chaining, practical .NET scenario |
 | [docs/agent-selection-guide.md](docs/agent-selection-guide.md) | Detailed selection guide with worked examples |
 
-> **Agent modes (Ask / Edit / Agent)** are covered in [Module 01 → docs/agent-modes.md](../01-customization/docs/agent-modes.md).  
+> **Agent modes (Ask / Edit / Agent)** are covered in [Module 01 → docs/agent-modes.md](../01-customization/docs/agent-modes.md).
 > **Copilot Coding Agent on GitHub.com** is covered in [Module 09](../09-copilot-on-github/README.md).
 
 ---
