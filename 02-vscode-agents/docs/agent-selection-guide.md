@@ -17,7 +17,8 @@ flowchart TD
     B -- "Yes — code changes\nor local context" --> F{Can you supervise\nit in real-time?}
     F -- "Yes — I'm at\nmy keyboard" --> G{File edits only\nor also run commands?}
     G -- "Chat + explain\nonly" --> D
-    G -- "Edits needed,\nstep by step" --> H[✏️ Edit Mode\nVS Code Chat]
+    G -- "Plans needed,\nstep by step" --> H[✏️ Plan Mode\nVS Code Chat]
+        H -->|Handoff implementation| E
     G -- "Full autonomy:\ncreate, edit, run,\ntest, fix" --> E
 
     F -- "No — I need\nit to run while\nI'm away" --> I{Is this a\nGitHub issue\nor PR task?}
@@ -34,19 +35,21 @@ flowchart TD
 
 ## Feature Comparison Matrix
 
-| Capability | Ask Mode | Edit Mode | Agent Mode | Background Agent |
-|---|:---:|:---:|:---:|:---:|
-| Answer questions | ✅ | ✅ | ✅ | ✅ |
-| Explain code | ✅ | ✅ | ✅ | ✅ |
-| Edit a single file | ❌ | ✅ | ✅ | ✅ |
-| Edit multiple files | ❌ | ✅ | ✅ | ✅ |
-| Run terminal commands | ❌ | ❌ | ✅ | ✅ |
-| Run tests and iterate | ❌ | ❌ | ✅ | ✅ |
-| Works while you're away | ❌ | ❌ | ❌ | ✅ |
-| Opens a PR automatically | ❌ | ❌ | ❌ | ✅ |
-| Uses MCP tools | ❌ | ❌ | ✅ | ✅ |
-| Reads context from `#file` | ✅ | ✅ | ✅ | ✅ |
-| Runs in cloud / CI | ❌ | ❌ | ❌ | ✅ |
+| Capability | Ask Mode | Plan Mode | Edit Mode (deprecated) | Agent Mode | Background Agent |
+|---|:---:|:---:|:---:|:---:|:---:|
+| Answer questions | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Explain code | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Edit a single file | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Edit multiple files | ❌ | ❌ | ✅ | ✅ | ✅ |
+| Run terminal commands | ❌ | ❌ | ❌ | ✅ | ✅ |
+| Run tests and iterate | ❌ | ❌ | ❌ | ✅ | ✅ |
+| Works while you're away | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Opens a PR automatically | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Uses MCP tools | ❌ | ⚠️* | ❌ | ✅ | ✅ |
+| Reads context from `#file` | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Runs in cloud / CI | ❌ | ❌ | ❌ | ❌ | ✅ |
+
+*Plan Mode can use additional tools, including MCP tools, when explicitly configured for planning workflows.
 
 ---
 

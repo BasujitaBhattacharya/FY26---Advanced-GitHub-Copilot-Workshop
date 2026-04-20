@@ -78,7 +78,7 @@ flowchart TD
 | [docs/sub-agents.md](docs/sub-agents.md) | Delegation patterns, chaining, practical .NET scenario |
 | [docs/agent-selection-guide.md](docs/agent-selection-guide.md) | Detailed selection guide with worked examples |
 
-> **Agent modes (Ask / Edit / Agent)** are covered in [Module 01 → docs/agent-modes.md](../01-customization/docs/agent-modes.md).
+> **Agent modes (Ask / Plan / Agent)** are covered in [Module 01 → docs/agent-modes.md](../01-customization/docs/agent-modes.md).
 > **Copilot Coding Agent on GitHub.com** is covered in [Module 09](../09-copilot-on-github/README.md).
 
 ---
