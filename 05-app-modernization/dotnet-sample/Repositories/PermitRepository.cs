@@ -14,6 +14,9 @@ namespace LegacyPermitApi
     /// </summary>
     public class PermitRepository
     {
+        private const int DefaultPage = 1;
+        private const int DefaultPageSize = 25;
+
         // LEGACY: Storing connection string in field — fine, but IConfiguration is the .NET 8 way
         private readonly string _connectionString;
 
@@ -25,15 +28,44 @@ namespace LegacyPermitApi
 
         // LEGACY: Synchronous — blocks thread for duration of DB call
         // MODERN: public async Task<IReadOnlyList<PermitModel>> GetAllAsync()
+        /// <summary>
+        /// Returns the default first page of permits.
+        /// </summary>
+        /// <returns>A paged list of permits.</returns>
         public List<PermitModel> GetAll()
         {
+            return GetAll(DefaultPage, DefaultPageSize);
+        }
+
+        /// <summary>
+        /// Returns a page of permits.
+        /// </summary>
+        /// <param name="page">The page number to return.</param>
+        /// <param name="pageSize">The number of records to return per page.</param>
+        /// <returns>A paged list of permits.</returns>
+        public List<PermitModel> GetAll(int page, int pageSize)
+        {
+            if (page < 1)
+                throw new ArgumentOutOfRangeException(nameof(page), "page must be greater than 0");
+
+            if (pageSize < 1)
+                throw new ArgumentOutOfRangeException(nameof(pageSize), "pageSize must be greater than 0");
+
             var permits = new List<PermitModel>();
+            var offset = (page - 1) * pageSize;
 
             // LEGACY: Using statement with manual SqlConnection/SqlCommand construction
             using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open(); // LEGACY: sync Open — use await connection.OpenAsync()
-                var command = new SqlCommand("SELECT * FROM Permits", connection);
+                var command = new SqlCommand(
+                    @"SELECT * FROM Permits
+                      ORDER BY PermitId
+                      OFFSET @offset ROWS
+                      FETCH NEXT @pageSize ROWS ONLY",
+                    connection);
+                command.Parameters.AddWithValue("@offset", offset);
+                command.Parameters.AddWithValue("@pageSize", pageSize);
                 var reader = command.ExecuteReader(); // LEGACY: sync — use await ExecuteReaderAsync()
 
                 while (reader.Read()) // LEGACY: sync Read — use await reader.ReadAsync()

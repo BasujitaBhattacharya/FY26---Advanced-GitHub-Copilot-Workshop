@@ -13,6 +13,8 @@ namespace LegacyPermitApi.Controllers
     /// </summary>
     public class PermitController : ApiController
     {
+        private const int MaxPageSize = 100;
+
         // LEGACY: Direct instantiation — should use constructor injection with IPermitRepository
         private readonly PermitRepository _repository;
 
@@ -24,16 +26,25 @@ namespace LegacyPermitApi.Controllers
             _repository = new PermitRepository(connectionString);
         }
 
-        // GET api/permits
+        // GET api/permits?page=1&pageSize=25
         // LEGACY: Synchronous action — blocks the thread
         // MODERN: public async Task<IHttpActionResult> GetAll() with await
         [HttpGet]
         [Route("api/permits")]
-        public IHttpActionResult GetAll()
+        public IHttpActionResult GetAll([FromUri] int page = 1, [FromUri] int pageSize = 25)
         {
+            if (page < 1)
+                return BadRequest("page must be greater than 0");
+
+            if (pageSize < 1)
+                return BadRequest("pageSize must be greater than 0");
+
+            if (pageSize > MaxPageSize)
+                return BadRequest($"pageSize cannot be greater than {MaxPageSize}");
+
             try
             {
-                var permits = _repository.GetAll(); // LEGACY: sync call
+                var permits = _repository.GetAll(page, pageSize); // LEGACY: sync call
                 return Ok(permits);
             }
             catch (Exception ex)
