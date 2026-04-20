@@ -165,7 +165,7 @@ Region is null. Apply a null-conditional fix that returns "Unknown" as the defau
 | Scenario | Recommended | Rationale |
 |---|---|---|
 | Explain a WCF contract to a business analyst | Ask Mode | Read-only, plain-language explanation |
-| Fix a single SQL injection vulnerability | Edit Mode | Targeted surgical fix |
+| Fix a single SQL injection vulnerability | Agent Mode | Targeted surgical fix |
 | Modernise a full Web API 2 controller | Agent Mode | Multi-file, needs build + test iteration |
 | Add WCAG 2.1 AA attributes to 30 Razor views | Background Agent | Repetitive, multi-file, no supervision needed |
 | Generate test plan from a service interface | Agent Mode | Tool use + iterative feedback valuable |
