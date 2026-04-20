@@ -27,13 +27,26 @@ namespace LegacyPermitApi
         // MODERN: public async Task<IReadOnlyList<PermitModel>> GetAllAsync()
         public List<PermitModel> GetAll()
         {
+            return GetAll(1, 25);
+        }
+
+        public List<PermitModel> GetAll(int page, int pageSize)
+        {
             var permits = new List<PermitModel>();
+            var offset = (page - 1) * pageSize;
 
             // LEGACY: Using statement with manual SqlConnection/SqlCommand construction
             using (var connection = new SqlConnection(_connectionString))
             {
                 connection.Open(); // LEGACY: sync Open — use await connection.OpenAsync()
-                var command = new SqlCommand("SELECT * FROM Permits", connection);
+                var command = new SqlCommand(
+                    @"SELECT * FROM Permits
+                      ORDER BY PermitId
+                      OFFSET @offset ROWS
+                      FETCH NEXT @pageSize ROWS ONLY",
+                    connection);
+                command.Parameters.AddWithValue("@offset", offset);
+                command.Parameters.AddWithValue("@pageSize", pageSize);
                 var reader = command.ExecuteReader(); // LEGACY: sync — use await ExecuteReaderAsync()
 
                 while (reader.Read()) // LEGACY: sync Read — use await reader.ReadAsync()
