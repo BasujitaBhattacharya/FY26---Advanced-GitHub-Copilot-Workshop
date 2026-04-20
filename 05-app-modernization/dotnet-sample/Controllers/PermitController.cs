@@ -13,6 +13,8 @@ namespace LegacyPermitApi.Controllers
     /// </summary>
     public class PermitController : ApiController
     {
+        private const int MaxPageSize = 100;
+
         // LEGACY: Direct instantiation — should use constructor injection with IPermitRepository
         private readonly PermitRepository _repository;
 
@@ -36,6 +38,9 @@ namespace LegacyPermitApi.Controllers
 
             if (pageSize < 1)
                 return BadRequest("pageSize must be greater than 0");
+
+            if (pageSize > MaxPageSize)
+                return BadRequest($"pageSize cannot be greater than {MaxPageSize}");
 
             try
             {
