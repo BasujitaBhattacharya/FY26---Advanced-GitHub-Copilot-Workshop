@@ -17,14 +17,14 @@ Connect GitHub Copilot Agent mode to your Azure DevOps organization — query wo
 
    Create a PAT at: `https://dev.azure.com/{your-org}/_usersSettings/tokens`
 
-3. Set environment variables:
+3. Set environment variables at the user level and restart VS Code if required:
    ```bash
    # Windows PowerShell
-   $env:AZURE_DEVOPS_ORG_URL = "https://dev.azure.com/your-org"
-   $env:AZURE_DEVOPS_PAT = "your-pat-here"
+   [Environment]::SetEnvironmentVariable("AZURE_DEVOPS_ORG", "AdvSecProductsDemo", "User")
+   $pat = "your-pat-here"
+   $b64 = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes(":$pat"))
 
-   # Or add to your system environment variables for persistence
-   ```
+   [Environment]::SetEnvironmentVariable("AZURE_DEVOPS_PAT", $b64, "User")
 
 ---
 

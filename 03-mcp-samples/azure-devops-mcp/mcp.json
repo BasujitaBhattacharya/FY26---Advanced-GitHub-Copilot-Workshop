@@ -2,11 +2,15 @@
   "servers": {
     "azure-devops": {
       "command": "npx",
-      "args": ["-y", "@microsoft/azure-devops-mcp"],
+      "args": [
+        "-y",
+        "@azure-devops/mcp@latest",
+        "${env:AZURE_DEVOPS_ORG}",
+        "--authentication",
+        "pat"
+      ],
       "env": {
-        "AZURE_DEVOPS_ORG_URL": "${env:AZURE_DEVOPS_ORG_URL}",
-        "AZURE_DEVOPS_PAT": "${env:AZURE_DEVOPS_PAT}"
+        "PERSONAL_ACCESS_TOKEN": "${env:AZURE_DEVOPS_PAT}"
       }
     }
   }
-}

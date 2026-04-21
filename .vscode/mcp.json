@@ -1,11 +1,43 @@
+// .vscode/mcp.json — combined config for all 4 servers
+// Prerequisites: az login, gh auth login, PAT for Azure DevOps
 {
   "servers": {
+    "azure-devops": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@azure-devops/mcp@latest",
+        "${env:AZURE_DEVOPS_ORG}",
+        "--authentication",
+        "pat"
+      ],
+      "env": {
+        "PERSONAL_ACCESS_TOKEN": "${env:AZURE_DEVOPS_PAT}"
+      }
+    },
+    "azure": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@azure/mcp@latest",
+        "server",
+        "start"
+      ]
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@github/mcp-server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${env:GITHUB_TOKEN}"
+      }
+    },
     "playwright": {
       "command": "npx",
       "args": [
-        "@playwright/mcp@latest",
-        "--browser",
-        "msedge"
+        "@playwright/mcp@latest"
       ]
     }
   }
