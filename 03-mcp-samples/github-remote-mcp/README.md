@@ -19,10 +19,11 @@ Connect GitHub Copilot Agent mode to GitHub's own API — search issues, create 
 
    Create one at: `https://github.com/settings/tokens`
 
-3. Set the token as an environment variable:
+3. Set the token as an environment variable and restart VS Code:
    ```bash
    # Windows PowerShell
-   $env:GITHUB_TOKEN = "ghp_your_token_here"
+
+[Environment]::SetEnvironmentVariable("GITHUB_TOKEN", "YOUR_GITHUB_TOKEN_HERE", "User")
    ```
 
 > **Alternative:** If you have GitHub CLI installed, you can use `gh auth token` to get the active token:
