@@ -1,0 +1,42 @@
+{
+	"servers": {
+		"azure-devops": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@azure-devops/mcp@latest",
+				"${env:AZURE_DEVOPS_ORG}",
+				"--authentication",
+				"pat"
+			],
+			"env": {
+				"PERSONAL_ACCESS_TOKEN": "${env:AZURE_DEVOPS_PAT}"
+			},
+			"type": "stdio"
+		},
+		"azure": {
+			"command": "npx",
+			"args": [
+				"-y",
+				"@azure/mcp@latest",
+				"server",
+				"start"
+			],
+			"type": "stdio"
+		},
+		"github": {
+			"type": "http",
+			"url": "https://api.githubcopilot.com/mcp/",
+			"headers": {
+				"Authorization": "Bearer ${env:GITHUB_TOKEN}"
+			}
+		},
+		"playwright": {
+			"command": "npx",
+			"args": [
+				"@playwright/mcp@latest"
+			],
+			"type": "stdio"
+		}
+	}
+}
