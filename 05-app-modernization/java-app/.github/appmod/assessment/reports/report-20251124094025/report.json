@@ -1,0 +1,1700 @@
+{
+  "version": "1.0.0",
+  "producer": "Java AppCAT CLI",
+  "metadata": {
+    "analysisStartTime": "2025-11-24T14:40:25.9949289Z",
+    "analysisEndTime": "2025-11-24T20:46:48.8845342Z",
+    "privacyMode": "Protected",
+    "privacyModeHelpUrl": "https://aka.ms/appcat-privacy-mode",
+    "targetIds": [
+      "azure-aks",
+      "azure-appservice",
+      "azure-container-apps"
+    ],
+    "targetDisplayNames": [
+      "Azure Kubernetes Service",
+      "Azure App Service",
+      "Azure Container Apps"
+    ],
+    "capabilities": [],
+    "os": [],
+    "id": "20251124094025",
+    "name": "Report_20251124094025",
+    "status": "completed",
+    "domains": [
+      "cloud-readiness",
+      "java-upgrade"
+    ],
+    "mode": "issue-only"
+  },
+  "summary": {
+    "totalProjects": 1,
+    "totalIssues": 20,
+    "totalIncidents": 77,
+    "totalEffort": 95,
+    "charts": {
+      "severity": {
+        "mandatory": 10,
+        "optional": 8,
+        "potential": 17,
+        "information": 42
+      },
+      "category": {
+        "containerization": 1,
+        "database-migration": 3,
+        "java-version-upgrade": 1,
+        "local-credential": 4,
+        "local-resource-access": 4,
+        "messaging-service-migration": 6,
+        "region-configuration": 4,
+        "spring-migration": 2,
+        "storage-migration": 2
+      }
+    },
+    "security": {}
+  },
+  "projects": [
+    {
+      "path": ".",
+      "issues": 20,
+      "storyPoints": 95,
+      "properties": {
+        "appName": "java-migration-copilot-samples",
+        "jdkVersion": "8",
+        "frameworks": [
+          "Spring Boot",
+          "Spring"
+        ],
+        "languages": [
+          "Java"
+        ],
+        "tools": [
+          "Maven"
+        ]
+      },
+      "incidents": [
+        {
+          "ruleId": "azure-aws-config-s3-03000",
+          "incidentId": "59388cdc-93c3-4766-839b-37939c7fb612",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 7,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 3,
+              "severity": "mandatory"
+            },
+            "azure-appservice": {
+              "effort": 3,
+              "severity": "mandatory"
+            },
+            "azure-container-apps": {
+              "effort": 3,
+              "severity": "mandatory"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-aws-config-s3-03000",
+          "incidentId": "d4a93a5c-8221-4632-9488-83e2ed5baf31",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 5,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 3,
+              "severity": "mandatory"
+            },
+            "azure-appservice": {
+              "effort": 3,
+              "severity": "mandatory"
+            },
+            "azure-container-apps": {
+              "effort": 3,
+              "severity": "mandatory"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-aws-config-region-02000",
+          "incidentId": "ce7eb36d-3a6a-4fb4-ad19-34c1c53ea399",
+          "location": "asset-manager/web/src/main/java/com/microsoft/migration/assets/config/AwsS3Config.java",
+          "locationKind": "File",
+          "line": 20,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 1,
+              "severity": "mandatory"
+            },
+            "azure-appservice": {
+              "effort": 1,
+              "severity": "mandatory"
+            },
+            "azure-container-apps": {
+              "effort": 1,
+              "severity": "mandatory"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-aws-config-region-02000",
+          "incidentId": "ff4fec0c-3646-410b-9651-a964aa8b0618",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 6,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 1,
+              "severity": "mandatory"
+            },
+            "azure-appservice": {
+              "effort": 1,
+              "severity": "mandatory"
+            },
+            "azure-container-apps": {
+              "effort": 1,
+              "severity": "mandatory"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-aws-config-region-02000",
+          "incidentId": "22269eb2-3ee6-4ccc-b883-7fa59bbec695",
+          "location": "asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/config/AwsS3Config.java",
+          "locationKind": "File",
+          "line": 19,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 1,
+              "severity": "mandatory"
+            },
+            "azure-appservice": {
+              "effort": 1,
+              "severity": "mandatory"
+            },
+            "azure-container-apps": {
+              "effort": 1,
+              "severity": "mandatory"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-aws-config-region-02000",
+          "incidentId": "247f7e11-6231-4cbd-9392-f12b45b286bb",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 4,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 1,
+              "severity": "mandatory"
+            },
+            "azure-appservice": {
+              "effort": 1,
+              "severity": "mandatory"
+            },
+            "azure-container-apps": {
+              "effort": 1,
+              "severity": "mandatory"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-java-version-02000",
+          "incidentId": "287fb652-6d1e-4bf8-8a9c-c53a433f709e",
+          "location": "asset-manager/pom.xml",
+          "locationKind": "File",
+          "line": 19,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 3,
+              "severity": "mandatory"
+            },
+            "azure-appservice": {
+              "effort": 3,
+              "severity": "mandatory"
+            },
+            "azure-container-apps": {
+              "effort": 3,
+              "severity": "mandatory"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-message-queue-config-rabbitmq-01000",
+          "incidentId": "a7d06ab4-fc6d-4932-ada6-1ff6e091e43c",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 14,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 5,
+              "severity": "optional"
+            },
+            "azure-appservice": {
+              "effort": 5,
+              "severity": "optional"
+            },
+            "azure-container-apps": {
+              "effort": 5,
+              "severity": "optional"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-message-queue-config-rabbitmq-01000",
+          "incidentId": "d04c64e0-cc2c-4e31-80fe-11a137ed8625",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 16,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 5,
+              "severity": "optional"
+            },
+            "azure-appservice": {
+              "effort": 5,
+              "severity": "optional"
+            },
+            "azure-container-apps": {
+              "effort": 5,
+              "severity": "optional"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-message-queue-config-rabbitmq-01000",
+          "incidentId": "f347e742-8d90-458d-a875-20867e5d20a7",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 17,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 5,
+              "severity": "optional"
+            },
+            "azure-appservice": {
+              "effort": 5,
+              "severity": "optional"
+            },
+            "azure-container-apps": {
+              "effort": 5,
+              "severity": "optional"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-message-queue-config-rabbitmq-01000",
+          "incidentId": "a6cc3711-9423-4c5b-8e64-42bef5d98795",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 11,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 5,
+              "severity": "optional"
+            },
+            "azure-appservice": {
+              "effort": 5,
+              "severity": "optional"
+            },
+            "azure-container-apps": {
+              "effort": 5,
+              "severity": "optional"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-message-queue-config-rabbitmq-01000",
+          "incidentId": "c3b9f30e-fccd-4214-bec1-4739638eb811",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 13,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 5,
+              "severity": "optional"
+            },
+            "azure-appservice": {
+              "effort": 5,
+              "severity": "optional"
+            },
+            "azure-container-apps": {
+              "effort": 5,
+              "severity": "optional"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-message-queue-config-rabbitmq-01000",
+          "incidentId": "5e37c678-c67a-4cfa-acbd-ddf470c6fbd0",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 14,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 5,
+              "severity": "optional"
+            },
+            "azure-appservice": {
+              "effort": 5,
+              "severity": "optional"
+            },
+            "azure-container-apps": {
+              "effort": 5,
+              "severity": "optional"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-password-01000",
+          "incidentId": "a3e686e1-73a3-4c53-93f0-e4eb96e3a5b7",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 17,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 3,
+              "severity": "potential"
+            },
+            "azure-appservice": {
+              "effort": 3,
+              "severity": "potential"
+            },
+            "azure-container-apps": {
+              "effort": 3,
+              "severity": "potential"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-password-01000",
+          "incidentId": "9a39ff8c-9946-4517-87cf-018a12dc27f9",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 22,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 3,
+              "severity": "potential"
+            },
+            "azure-appservice": {
+              "effort": 3,
+              "severity": "potential"
+            },
+            "azure-container-apps": {
+              "effort": 3,
+              "severity": "potential"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-password-01000",
+          "incidentId": "5fcb17ae-09b1-4d16-b51a-ca5d437b1258",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 14,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 3,
+              "severity": "potential"
+            },
+            "azure-appservice": {
+              "effort": 3,
+              "severity": "potential"
+            },
+            "azure-container-apps": {
+              "effort": 3,
+              "severity": "potential"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-password-01000",
+          "incidentId": "f482a4a8-61c7-4c5a-8d3b-2cdf8916d6b6",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 19,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 3,
+              "severity": "potential"
+            },
+            "azure-appservice": {
+              "effort": 3,
+              "severity": "potential"
+            },
+            "azure-container-apps": {
+              "effort": 3,
+              "severity": "potential"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "spring-boot-to-azure-restricted-config-01000",
+          "incidentId": "d9ecd058-d589-42a4-95ca-1ead13f606ab",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 1,
+          "column": 0,
+          "targets": {
+            "azure-container-apps": {
+              "effort": 1,
+              "severity": "potential"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "spring-boot-to-azure-restricted-config-01000",
+          "incidentId": "fe13358c-61a7-418c-b609-bf83fa4cc9f3",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 8,
+          "column": 0,
+          "targets": {
+            "azure-container-apps": {
+              "effort": 1,
+              "severity": "potential"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-database-postgresql-02000",
+          "incidentId": "d2573f9e-4700-4491-8ba3-4ce4a852cf78",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 20,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 3,
+              "severity": "potential"
+            },
+            "azure-appservice": {
+              "effort": 3,
+              "severity": "potential"
+            },
+            "azure-container-apps": {
+              "effort": 3,
+              "severity": "potential"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-database-postgresql-02000",
+          "incidentId": "ca71cdce-79df-465b-869b-f359a5568bfd",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 17,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 3,
+              "severity": "potential"
+            },
+            "azure-appservice": {
+              "effort": 3,
+              "severity": "potential"
+            },
+            "azure-container-apps": {
+              "effort": 3,
+              "severity": "potential"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "azure-database-postgresql-02000",
+          "incidentId": "9fcbde0f-ad60-446b-9648-e9063fcf6645",
+          "location": "",
+          "locationKind": "",
+          "targets": {
+            "azure-aks": {
+              "effort": 3,
+              "severity": "potential"
+            },
+            "azure-appservice": {
+              "effort": 3,
+              "severity": "potential"
+            },
+            "azure-container-apps": {
+              "effort": 3,
+              "severity": "potential"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=azure/springboot"
+          ]
+        },
+        {
+          "ruleId": "localhost-jdbc-00002",
+          "incidentId": "acc35458-4ae6-4824-b628-95f1af3173ae",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 20,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 7,
+              "severity": "mandatory"
+            },
+            "azure-appservice": {
+              "effort": 7,
+              "severity": "mandatory"
+            },
+            "azure-container-apps": {
+              "effort": 7,
+              "severity": "mandatory"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=cloud-readiness"
+          ]
+        },
+        {
+          "ruleId": "localhost-jdbc-00002",
+          "incidentId": "1b43361a-a438-41f7-9464-cacef991799b",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 17,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 7,
+              "severity": "mandatory"
+            },
+            "azure-appservice": {
+              "effort": 7,
+              "severity": "mandatory"
+            },
+            "azure-container-apps": {
+              "effort": 7,
+              "severity": "mandatory"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=cloud-readiness"
+          ]
+        },
+        {
+          "ruleId": "localhost-00004",
+          "incidentId": "8f53f5d5-4892-469d-9598-c349506da190",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 14,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 7,
+              "severity": "optional"
+            },
+            "azure-appservice": {
+              "effort": 7,
+              "severity": "optional"
+            },
+            "azure-container-apps": {
+              "effort": 7,
+              "severity": "optional"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=cloud-readiness"
+          ]
+        },
+        {
+          "ruleId": "localhost-00004",
+          "incidentId": "bea04d66-205d-47a4-990d-dcb1a6a7115a",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 11,
+          "column": 0,
+          "targets": {
+            "azure-aks": {
+              "effort": 7,
+              "severity": "optional"
+            },
+            "azure-appservice": {
+              "effort": 7,
+              "severity": "optional"
+            },
+            "azure-container-apps": {
+              "effort": 7,
+              "severity": "optional"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=cloud-readiness"
+          ]
+        },
+        {
+          "ruleId": "dockerfile-00000",
+          "incidentId": "53f1a9d9-26c4-4963-8bd9-64d9512095d3",
+          "location": "",
+          "locationKind": "",
+          "targets": {
+            "azure-aks": {
+              "effort": 1,
+              "severity": "mandatory"
+            },
+            "azure-container-apps": {
+              "effort": 1,
+              "severity": "mandatory"
+            }
+          },
+          "labels": [
+            "type=violation",
+            "ruleset=cloud-readiness"
+          ]
+        },
+        {
+          "ruleId": "discover-properties-file",
+          "incidentId": "3522a970-2132-4f5b-94dd-4d3805912182",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-properties-file",
+          "incidentId": "8e62afe6-93e7-4fcf-913f-726e738b2800",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "3f191aea-b72a-4d0e-808f-5ce6b4812cdc",
+          "location": "asset-manager/web/src/main/java/com/microsoft/migration/assets/AssetsManagerApplication.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "3fd6c65d-f110-4c5c-9ae5-caaed15bd741",
+          "location": "asset-manager/web/src/main/java/com/microsoft/migration/assets/config/AwsS3Config.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "6879b13f-efc8-4bca-9f7e-4c58260c6731",
+          "location": "asset-manager/web/src/main/java/com/microsoft/migration/assets/config/RabbitConfig.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "af504a75-3795-4399-952d-4247b0f49770",
+          "location": "asset-manager/web/src/main/java/com/microsoft/migration/assets/config/WebMvcConfig.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "afbbb18b-9454-48c1-ae44-d9f58607bd52",
+          "location": "asset-manager/web/src/main/java/com/microsoft/migration/assets/constants/StorageConstants.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "edb28c25-8468-41ee-80c4-d8cfcb498d7b",
+          "location": "asset-manager/web/src/main/java/com/microsoft/migration/assets/controller/HomeController.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "81b6c7e8-66de-4d04-ad72-d8dcbe985714",
+          "location": "asset-manager/web/src/main/java/com/microsoft/migration/assets/controller/S3Controller.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "649f2f63-c32d-4c64-866c-6536c6e73d1b",
+          "location": "asset-manager/web/src/main/java/com/microsoft/migration/assets/model/ImageMetadata.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "8f24acc1-dd31-4e63-a300-c82a49721bba",
+          "location": "asset-manager/web/src/main/java/com/microsoft/migration/assets/model/ImageProcessingMessage.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "9a563d6c-99c9-46f8-9c08-282c324ed711",
+          "location": "asset-manager/web/src/main/java/com/microsoft/migration/assets/model/S3StorageItem.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "ff00a8e6-fcd7-4806-b769-b68b2a375007",
+          "location": "asset-manager/web/src/main/java/com/microsoft/migration/assets/repository/ImageMetadataRepository.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "100de717-1682-47c3-8bb4-6856e3c8c545",
+          "location": "asset-manager/web/src/main/java/com/microsoft/migration/assets/service/AwsS3Service.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "0c161ab0-40f8-4539-9b47-9edd3497a559",
+          "location": "asset-manager/web/src/main/java/com/microsoft/migration/assets/service/BackupMessageProcessor.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "cb8f4229-3f92-45ad-af48-33711c298ccd",
+          "location": "asset-manager/web/src/main/java/com/microsoft/migration/assets/service/LocalFileStorageService.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "8a6502e2-0737-47c9-926c-05330f82fa1b",
+          "location": "asset-manager/web/src/main/java/com/microsoft/migration/assets/service/StorageService.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "6083a102-bdb5-404d-a2b7-dae64e6be687",
+          "location": "asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/WorkerApplication.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "e3a3faa9-1839-4ef7-955f-bc650929e3c0",
+          "location": "asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/config/AwsS3Config.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "c639d4d5-237c-4f98-bed2-0be0b939b230",
+          "location": "asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/config/RabbitConfig.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "72de3814-a729-4a62-96ad-eee5fc51b466",
+          "location": "asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/model/ImageMetadata.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "23a70fb6-2a82-4d62-8fd9-5f305543241d",
+          "location": "asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/model/ImageProcessingMessage.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "93db1172-b09e-494d-85df-90613959e0c2",
+          "location": "asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/repository/ImageMetadataRepository.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "ee28daaf-d0ed-41bf-bdd3-2f7922279413",
+          "location": "asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/service/AbstractFileProcessingService.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "84a67fe2-2320-4fe9-8a5f-efed28284092",
+          "location": "asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/service/FileProcessor.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "0fd40d9e-c4cb-440f-9bad-32867b3db66a",
+          "location": "asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/service/LocalFileProcessingService.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "92fa06c2-6da2-416f-836f-8c84ddda8deb",
+          "location": "asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/service/S3FileProcessingService.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "2e3bbd5b-3a03-40a6-9ca1-92e7c987259a",
+          "location": "asset-manager/worker/src/main/java/com/microsoft/migration/assets/worker/util/StorageUtil.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-java-files",
+          "incidentId": "5a82da3e-5def-434f-84e0-192c7e17ed66",
+          "location": "asset-manager/worker/src/test/java/com/microsoft/migration/assets/worker/service/S3FileProcessingServiceTest.java",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-maven-xml",
+          "incidentId": "0934b1a8-e0c2-4d6c-9e1b-da7bc3d14f1d",
+          "location": "asset-manager/pom.xml",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-maven-xml",
+          "incidentId": "aa1776e9-f23e-4582-826b-63e6275004fe",
+          "location": "asset-manager/web/pom.xml",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "discover-maven-xml",
+          "incidentId": "7a3b309e-0264-48c0-9fc9-2d9759abe848",
+          "location": "asset-manager/worker/pom.xml",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=discovery-rules"
+          ]
+        },
+        {
+          "ruleId": "configuration-management-technology-usage-0300",
+          "incidentId": "2f5a9fa1-0322-470f-948c-50753097b32a",
+          "location": "",
+          "locationKind": "",
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "configuration-management-0200",
+          "incidentId": "848681e2-ed19-41a8-8e78-4d4a3a26464a",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "configuration-management-0200",
+          "incidentId": "c7782675-cc27-4945-adca-578d52d0fd8b",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "configuration-management-0300",
+          "incidentId": "6352addc-1115-471a-a786-cb6619842ab8",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 20,
+          "column": 0,
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "configuration-management-0300",
+          "incidentId": "9db886ce-afec-425a-9a53-60b8898295fb",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 21,
+          "column": 0,
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "configuration-management-0300",
+          "incidentId": "13e9b7f8-3219-47d1-a35c-67b9686a1726",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 22,
+          "column": 0,
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "configuration-management-0300",
+          "incidentId": "962f0d5b-a5a4-46d9-8b56-92d7aa77a14a",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 17,
+          "column": 0,
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "configuration-management-0300",
+          "incidentId": "fc156c4d-1a91-4c15-9384-04789dde2107",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 18,
+          "column": 0,
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "configuration-management-0300",
+          "incidentId": "dcb04404-5e8e-4c1a-9edb-86c0a1f0142b",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 19,
+          "column": 0,
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "connect-01800",
+          "incidentId": "c35c8d77-6dc7-4a26-ab27-a7c11111a5a6",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 14,
+          "column": 0,
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "connect-01800",
+          "incidentId": "687aa364-18dd-496a-949e-ab31dc8e480f",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 16,
+          "column": 0,
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "connect-01800",
+          "incidentId": "1e2f6489-5335-42d4-b728-17a47f4129a9",
+          "location": "asset-manager/web/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 17,
+          "column": 0,
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "connect-01800",
+          "incidentId": "55db9e5a-43be-4edd-b58c-eb41b73c7941",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 11,
+          "column": 0,
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "connect-01800",
+          "incidentId": "97def26e-89f0-479d-bf90-c4804d12edb7",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 13,
+          "column": 0,
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "connect-01800",
+          "incidentId": "014c02a9-70a3-45aa-bd51-cdaf556f9854",
+          "location": "asset-manager/worker/src/main/resources/application.properties",
+          "locationKind": "File",
+          "line": 14,
+          "column": 0,
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "non-xml-technology-usage-20000",
+          "incidentId": "3cd42e89-5148-479f-bc07-ddfa5d0e19db",
+          "location": "",
+          "locationKind": "",
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "technology-usage-connect-01800",
+          "incidentId": "3667af49-712f-4aa0-a8b6-960d089e1622",
+          "location": "",
+          "locationKind": "",
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        },
+        {
+          "ruleId": "configuration-management-technology-usage-0200",
+          "incidentId": "73872275-3f1b-49e0-9ad7-4db8a1a72f13",
+          "location": "",
+          "locationKind": "",
+          "labels": [
+            "type=insight",
+            "ruleset=technology-usage"
+          ]
+        }
+      ]
+    }
+  ],
+  "rules": {
+    "azure-aws-config-region-02000": {
+      "id": "azure-aws-config-region-02000",
+      "description": "The application contains AWS region configuration.\n\n * Identify **Azure regions**: Determine the Azure regions that align with your application's requirements for availability, latency, compliance, and data residency. Azure provides a wide range of regions globally.\n\n * Update **configuration settings**: Modify the Java application's configuration to replace the AWS region configuration with the corresponding Azure region configuration. Update the code or configuration files to reflect the Azure region names or identifiers.",
+      "title": "AWS region configuration",
+      "severity": "mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://azure.microsoft.com/explore/global-infrastructure/geographies",
+          "title": "Azure geographies"
+        }
+      ],
+      "labels": [
+        "target=azure-appservice",
+        "target=azure-aks",
+        "target=azure-container-apps",
+        "source",
+        "domain=cloud-readiness",
+        "category=region-configuration",
+        "AWS",
+        "os=windows",
+        "os=linux"
+      ]
+    },
+    "azure-aws-config-s3-03000": {
+      "id": "azure-aws-config-s3-03000",
+      "description": "The application contains AWS S3 usage. Consider using Azure Blob Storage instead.\n\n * Provision **Azure Blob Storage**: Create an Azure Blob Storage account in the Azure portal. Choose the appropriate storage tier (Hot, Cool, or Archive) based on your application's data access patterns and cost considerations.\n\n * **Update application code**: Modify the Java application's code to replace AWS SDK calls with the equivalent Azure Storage SDK calls for Azure Blob Storage. Update the code to authenticate and interact with Azure Blob Storage using the Azure SDK for Java.\n\n * **Map S3 functionality** to Azure Blob Storage: Understand the differences between AWS S3 and Azure Blob Storage, and adjust your application logic accordingly. Map S3 concepts (buckets, objects, permissions, etc.) to their Azure Blob Storage equivalents (containers, blobs, shared access signatures, etc.).\n\n * **Migrate data** from S3 to Azure Blob Storage: Plan and execute the migration of your data from AWS S3 to Azure Blob Storage. You can use Azure Storage Data Transfer Tool, AzCopy, or other migration tools to copy the data from S3 buckets to Azure Blob Storage containers.\n\n * Update **access permissions**: Adjust the access permissions and policies in Azure Blob Storage to match your application's requirements. Azure provides various options for controlling access, including shared access signatures (SAS), Azure AD authentication, and role-based access control (RBAC).\n\n * Validate functionality and **performance**: Thoroughly test the updated application to ensure that it can read from and write to Azure Blob Storage correctly. Validate the performance of data transfer and any other operations to ensure they meet your application's requirements.",
+      "title": "AWS S3 usage found",
+      "severity": "mandatory",
+      "effort": 3,
+      "links": [
+        {
+          "url": "https://learn.microsoft.com/azure/storage/blobs",
+          "title": "Azure Blob Storage documentation"
+        },
+        {
+          "url": "https://learn.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-java",
+          "title": "Quickstart: Azure Blob Storage client library for Java"
+        },
+        {
+          "url": "https://azure.microsoft.com/blog/move-your-data-from-aws-s3-to-azure-storage-using-azcopy",
+          "title": "Move your data from AWS S3 to Azure Storage using AzCopy"
+        }
+      ],
+      "labels": [
+        "target=azure-appservice",
+        "target=azure-aks",
+        "target=azure-container-apps",
+        "source",
+        "domain=cloud-readiness",
+        "category=storage-migration",
+        "AWS",
+        "storage",
+        "os=windows",
+        "os=linux"
+      ]
+    },
+    "azure-database-postgresql-02000": {
+      "id": "azure-database-postgresql-02000",
+      "description": "To migrate a Java application that uses a PostgreSQL database to Azure, you can follow these recommendations:\n\n * Use a managed **Azure Database for PostgreSQL Flexible Server**: For that create a managed PostgreSQL Flexible Server database in Azure and choose the appropriate pricing tier based on your application's requirements for performance, storage, and availability.\n\n * **Migrate** the existing PostgreSQL database: For that you can use the Azure Database Migration Service (DMS) to perform an online migration with minimal downtime.\n\n * Update the application's **database connection** details: Modify the Java application's configuration to point to the newly provisioned Azure Database for PostgreSQL. Update the connection string, hostname, port, username, and password information accordingly.\n\n * Enable **monitoring and diagnostics**: Utilize Azure Monitor to gain insights into the performance and health of your Java application and the underlying PostgreSQL database. Set up metrics, alerts, and log analytics to proactively identify and resolve issues.\n\n * Implement **security** measures: Apply security best practices to protect your Java application and the PostgreSQL database. This includes implementing authentication and authorization mechanisms with passwordless connections and leveraging Microsoft Defender for Cloud for threat detection and vulnerability assessments.\n\n * **Backup** your data: Azure Database for PostgreSQL provides automated backups by default. You can configure the retention period for backups based on your requirements. You can also enable geo-redundant backups, if needed, to enhance data durability and availability.",
+      "title": "PostgreSQL database found",
+      "severity": "potential",
+      "effort": 3,
+      "links": [
+        {
+          "url": "https://learn.microsoft.com/azure/postgresql/flexible-server",
+          "title": "Azure PostgreSQL Flexible Server documentation"
+        },
+        {
+          "url": "https://learn.microsoft.com/azure/dms",
+          "title": "Azure Database Migration Service documentation"
+        },
+        {
+          "url": "https://learn.microsoft.com/azure/azure-monitor",
+          "title": "Azure Monitor documentation"
+        },
+        {
+          "url": "https://learn.microsoft.com/azure/defender-for-cloud",
+          "title": "Microsoft Defender for Cloud"
+        },
+        {
+          "url": "https://learn.microsoft.com/azure/postgresql/single-server/concepts-backup",
+          "title": "Backup and restore in Azure Database for PostgreSQL"
+        }
+      ],
+      "labels": [
+        "target=azure-appservice",
+        "target=azure-aks",
+        "target=azure-container-apps",
+        "source",
+        "domain=cloud-readiness",
+        "category=database-migration",
+        "database",
+        "postgresql",
+        "os=windows",
+        "os=linux"
+      ]
+    },
+    "azure-java-version-02000": {
+      "id": "azure-java-version-02000",
+      "description": "The application is using an old Java version. It is strongly recommended to plan and execute a migration strategy to upgrade your application to the latest stable Java version.\nOlder Java versions may have known security vulnerabilities that can expose your application and infrastructure to potential attacks. Migrating to a supported version ensures that you benefit from the latest security patches and updates.",
+      "title": "Legacy Java version",
+      "severity": "mandatory",
+      "effort": 3,
+      "labels": [
+        "target=azure-appservice",
+        "target=azure-aks",
+        "target=azure-container-apps",
+        "source",
+        "domain=java-upgrade",
+        "category=java-version-upgrade",
+        "version",
+        "os=windows",
+        "os=linux"
+      ]
+    },
+    "azure-message-queue-config-rabbitmq-01000": {
+      "id": "azure-message-queue-config-rabbitmq-01000",
+      "description": "The application uses a RabbitMQ connection string, username, or password. To migrate a Java application that uses a RabbitMQ connection string to Azure, you can follow these recommendations:\n\n * Provision **Azure Service Bus**: Replace RabbitMQ with Azure Service Bus, a fully managed messaging service that offers reliable message queuing and publish/subscribe capabilities.\n\n * **Connect to Azure Service Bus using Service Connector**: Create service connection using **Service Connector** to connect your Azure Service Bus to your azure app. Instead of manually configuring connection string in your applications, you can automatically connect Azure Service Bus using Service Connector.\n \n * **Passwordless connections for Azure services**: Consider using passwordless connections for Azure services. You can provide an additional layer of security and convenience for accessing resources in Azure by eliminating the need for passwords. This way you can reduce the risk of password-related vulnerabilities, such as weak passwords or password theft.",
+      "title": "RabbitMQ connection string, username or password found in configuration file",
+      "severity": "optional",
+      "effort": 5,
+      "links": [
+        {
+          "url": "https://learn.microsoft.com/azure/service-bus-messaging",
+          "title": "Azure Service Bus documentation"
+        },
+        {
+          "url": "https://learn.microsoft.com/azure/service-connector/quickstart-portal-container-apps",
+          "title": "Service connection in Azure Container Apps"
+        },
+        {
+          "url": "https://learn.microsoft.com/azure/developer/intro/passwordless-overview",
+          "title": "Passwordless connections for Azure services"
+        }
+      ],
+      "labels": [
+        "target=azure-appservice",
+        "target=azure-aks",
+        "target=azure-container-apps",
+        "source",
+        "domain=cloud-readiness",
+        "category=messaging-service-migration",
+        "message-queue",
+        "RabbitMQ Client",
+        "os=windows",
+        "os=linux"
+      ]
+    },
+    "azure-password-01000": {
+      "id": "azure-password-01000",
+      "description": "Using clear passwords in property files is a security risk, as they can be easily compromised if the files are accessed by unauthorized individuals. To enhance the security of your application, it is recommended to employ secure credential management practices.\n\n * **Azure Key Vault**: Utilize Azure Key Vault to securely store and manage your application's passwords and other sensitive credentials. Azure Key Vault provides a centralized and highly secure location for storing secrets, keys, and certificates.\n\n * **Passwordless connections**: You can provide an additional layer of security and convenience for accessing resources in Azure by eliminating the need for passwords. This way you can reduce the risk of password-related vulnerabilities, such as weak passwords or password theft.",
+      "title": "Password found in configuration file",
+      "severity": "potential",
+      "effort": 3,
+      "links": [
+        {
+          "url": "https://learn.microsoft.com/azure/key-vault",
+          "title": "Azure Key Vault documentation"
+        },
+        {
+          "url": "https://learn.microsoft.com/azure/developer/intro/passwordless-overview",
+          "title": "Passwordless connections for Azure services"
+        },
+        {
+          "url": "https://learn.microsoft.com/azure/developer/java/migration/migrate-spring-boot-to-azure-container-apps#inventory-configuration-sources-and-secrets",
+          "title": "Password found in configuration file"
+        },
+        {
+          "url": "https://docs.microsoft.com/azure/developer/java/spring-framework/configure-spring-boot-starter-java-app-with-azure-key-vault",
+          "title": "Read a secret from Azure Key Vault in a Spring Boot application"
+        },
+        {
+          "url": "https://search.maven.org/artifact/com.azure.spring/azure-spring-boot-starter-keyvault-secrets",
+          "title": "Azure Spring Boot Starter for Azure Key Vault Secrets"
+        }
+      ],
+      "labels": [
+        "source=springboot",
+        "source=eap7",
+        "source=eap",
+        "target=azure-appservice",
+        "target=azure-aks",
+        "target=azure-container-apps",
+        "domain=cloud-readiness",
+        "category=local-credential",
+        "password",
+        "security",
+        "os=windows",
+        "os=linux"
+      ]
+    },
+    "configuration-management-0200": {
+      "id": "configuration-management-0200",
+      "description": "Application properties file detected",
+      "title": "Application properties file detected",
+      "severity": "potential",
+      "effort": 0,
+      "labels": [
+        "konveyor.io/include=always",
+        "discovery",
+        "tag=Application Properties File",
+        "tag=Application properties file detected"
+      ]
+    },
+    "configuration-management-0300": {
+      "id": "configuration-management-0300",
+      "description": "Spring datasource properties detected",
+      "title": "Spring datasource properties detected",
+      "severity": "potential",
+      "effort": 0,
+      "labels": [
+        "konveyor.io/include=always",
+        "discovery",
+        "tag=Spring Properties",
+        "tag=Spring datasource properties detected"
+      ]
+    },
+    "configuration-management-technology-usage-0200": {
+      "id": "configuration-management-technology-usage-0200",
+      "description": "",
+      "title": "Application Properties File",
+      "severity": "information",
+      "effort": 0,
+      "labels": [
+        "konveyor.io/include=always",
+        "discovery",
+        "tag=Sustain=Application Properties File",
+        "tag=Configuration Management=Application Properties File",
+        "tag=Embedded=Application Properties File"
+      ]
+    },
+    "configuration-management-technology-usage-0300": {
+      "id": "configuration-management-technology-usage-0300",
+      "description": "",
+      "title": "Spring Properties",
+      "severity": "information",
+      "effort": 0,
+      "labels": [
+        "konveyor.io/include=always",
+        "discovery",
+        "tag=Sustain=Spring Properties",
+        "tag=Configuration Management=Spring Properties",
+        "tag=Embedded=Spring Properties"
+      ]
+    },
+    "connect-01800": {
+      "id": "connect-01800",
+      "description": "",
+      "title": "Embedded library - RabbitMQ Client",
+      "severity": "information",
+      "effort": 0,
+      "labels": [
+        "konveyor.io/include=always",
+        "discovery",
+        "tag=RabbitMQ Client",
+        "tag=Embedded library - RabbitMQ Client"
+      ]
+    },
+    "discover-java-files": {
+      "id": "discover-java-files",
+      "description": "",
+      "title": "Java source files",
+      "severity": "information",
+      "effort": 0,
+      "labels": [
+        "konveyor.io/include=always",
+        "discovery",
+        "tag=Java Source"
+      ]
+    },
+    "discover-maven-xml": {
+      "id": "discover-maven-xml",
+      "description": "",
+      "title": "Maven XML file",
+      "severity": "information",
+      "effort": 0,
+      "labels": [
+        "konveyor.io/include=always",
+        "discovery",
+        "tag=Maven XML"
+      ]
+    },
+    "discover-properties-file": {
+      "id": "discover-properties-file",
+      "description": "",
+      "title": "Properties file",
+      "severity": "information",
+      "effort": 0,
+      "labels": [
+        "konveyor.io/include=always",
+        "discovery",
+        "tag=Properties"
+      ]
+    },
+    "dockerfile-00000": {
+      "id": "dockerfile-00000",
+      "description": "No Dockerfile was found in the project. This suggests the application may not yet be containerized. \nConsider creating a Dockerfile to enable container-based replatforming to Azure services such as Azure Container Apps or AKS.",
+      "title": "No Dockerfile found",
+      "severity": "mandatory",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://www.baeldung.com/java-dockerize-app",
+          "title": "Dockerizing a Java Application"
+        }
+      ],
+      "labels": [
+        "target=azure-aks",
+        "target=azure-container-apps",
+        "capability=containerization",
+        "source",
+        "domain=cloud-readiness",
+        "category=containerization",
+        "containerization",
+        "os=windows",
+        "os=linux"
+      ]
+    },
+    "localhost-00004": {
+      "id": "localhost-00004",
+      "description": "The app is trying to use localhost, please try to migrate the resource to cloud",
+      "title": "Localhost Usage",
+      "severity": "optional",
+      "effort": 7,
+      "labels": [
+        "target=azure-aks",
+        "target=azure-container-apps",
+        "target=azure-appservice",
+        "capability=containerization",
+        "source",
+        "domain=cloud-readiness",
+        "category=local-resource-access",
+        "localhost",
+        "containerization",
+        "os=windows",
+        "os=linux"
+      ]
+    },
+    "localhost-jdbc-00002": {
+      "id": "localhost-jdbc-00002",
+      "description": "The app is trying to access local resource by JDBC, please try to migrate the resource to cloud",
+      "title": "Local JDBC Calls",
+      "severity": "mandatory",
+      "effort": 7,
+      "labels": [
+        "target=azure-aks",
+        "target=azure-container-apps",
+        "target=azure-appservice",
+        "capability=containerization",
+        "source",
+        "domain=cloud-readiness",
+        "category=local-resource-access",
+        "localhost",
+        "containerization",
+        "os=windows",
+        "os=linux"
+      ]
+    },
+    "non-xml-technology-usage-20000": {
+      "id": "non-xml-technology-usage-20000",
+      "description": "",
+      "title": "Properties",
+      "severity": "information",
+      "effort": 0,
+      "labels": [
+        "konveyor.io/include=always",
+        "discovery",
+        "tag=Sustain=Properties",
+        "tag=Embedded=Properties",
+        "tag=Other=Properties"
+      ]
+    },
+    "spring-boot-to-azure-restricted-config-01000": {
+      "id": "spring-boot-to-azure-restricted-config-01000",
+      "description": "The application uses restricted configurations for Azure Container Apps.\n These properties can be automatically injected into your application environment by Azure Container Apps to access managed Config Server and managed Eureka Server.\n Please remove them from your application, including configuration files, config server files, command line parameters, Java system attributes, and environment variables.\n\n If configured in **configuration files**: they will be ignored and overrided by Azure Container Apps.\n \n If configured in **Config Server files**, **command line parameters**, **Java system attribute**, **environment variable**: they need to be removed or you might experience conflicts and unexpected behavior.",
+      "title": "Restricted configurations found",
+      "severity": "potential",
+      "effort": 1,
+      "links": [
+        {
+          "url": "https://learn.microsoft.com/azure/developer/java/migration/migrate-spring-cloud-to-azure-container-apps#remove-restricted-configurations",
+          "title": "Migrate Spring Boot applications to Azure Container Apps - Remove restricted configurations"
+        },
+        {
+          "url": "https://learn.microsoft.com/azure/container-apps/java-config-server?tabs=azure-cli",
+          "title": "Connect to a managed Config Server for Spring in Azure Container Apps"
+        },
+        {
+          "url": "https://learn.microsoft.com/azure/container-apps/java-eureka-server?tabs=azure-cli",
+          "title": "Connect to a managed Eureka Server for Spring in Azure Container Apps"
+        }
+      ],
+      "labels": [
+        "target=azure-container-apps",
+        "source=springboot",
+        "domain=cloud-readiness",
+        "category=spring-migration",
+        "os=windows",
+        "os=linux"
+      ]
+    },
+    "technology-usage-connect-01800": {
+      "id": "technology-usage-connect-01800",
+      "description": "",
+      "title": "RabbitMQ Client",
+      "severity": "information",
+      "effort": 0,
+      "labels": [
+        "konveyor.io/include=always",
+        "discovery",
+        "tag=Connect=RabbitMQ Client",
+        "tag=Embedded=RabbitMQ Client",
+        "tag=Other=RabbitMQ Client"
+      ]
+    }
+  },
+  "security": []
+}
